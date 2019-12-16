@@ -6,6 +6,9 @@ namespace SeriesGuide.Core.Models
 {
     public class Episode
     {
-
+        public int EpisodeID { get; set; }
+        public int SeasonNumber { get; set; }
+        public int EpisodeNumber { get; set; }
+        public string Name { get; set; }
     }
 }
