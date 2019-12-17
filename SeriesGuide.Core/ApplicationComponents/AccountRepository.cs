@@ -30,6 +30,8 @@ namespace SeriesGuide.Core.ApplicationComponents
         public AccountRepository()
         {
             AccountsData data = JsonConvertor.UpLoad<AccountsData>(Path.Combine(FolderPath, FileName));
+            items = data.Accounts;
+            currentAccount = data.Current;
         }
 
         public void Add(Account item)
