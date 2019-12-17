@@ -26,6 +26,12 @@ namespace ClientApplication
         {
             InitializeComponent();
             GetData();
+            if (Factory.Instance.accountRepository.CurrentAccount != null)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
         }
 
         private void GetData()

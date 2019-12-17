@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="600" Width="700" Background="Transparent">
+    <Border CornerRadius="25">
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="HotPink" Offset="0.0"></GradientStop>
+                <GradientStop Color="MediumPurple" Offset="0.7"/>
+                <GradientStop Color="BlueViolet" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Border.Background>
+        <TabControl Background="Transparent"  Margin="10" BorderBrush="Transparent">
+            <TabItem Header="Series" Background="Transparent" BorderBrush="White" Width="70">
+                <TabControl Background="Transparent" BorderBrush="Transparent">
+                    <TabItem Header="Added" Background="Transparent" BorderBrush="White" Width="100">
+                        <Grid>
+                            
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
+                        <Grid>
+                            <TextBox HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" Margin="30" x:Name="NewSeries"></TextBox>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Films" Background="Transparent" BorderBrush="White" Width="70">
+                <TabControl Background="Transparent" BorderBrush="Transparent">
+                    <TabItem Header="Watch List" Background="Transparent" BorderBrush="White" Width="100">
+                        <Grid>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
+                        <Grid>
+                            
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Watched" Background="Transparent" BorderBrush="White" Width="100">
+                        <Grid>
+
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Settings" Background="Transparent" BorderBrush="White" Width="70">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Border>
 </Window>
