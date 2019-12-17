@@ -2,6 +2,23 @@
   "current": null,
   "accounts": 
   [
-
+	{
+		"Id": 0,
+		"Login": natusyakuu,
+		"PhoneNumber": "+79852169992",
+		"Password": "123456",
+		"Added": {},
+		"ToWatchList": [],
+		"WatchedList": [],
+	},
+	{
+		"Id": 0,
+		"Login": david2000sobak,
+		"PhoneNumber": "+79031916478",
+		"Password": "654321",
+		"Added": {},
+		"ToWatchList": [],
+		"WatchedList": [],
+	}
   ]
 }

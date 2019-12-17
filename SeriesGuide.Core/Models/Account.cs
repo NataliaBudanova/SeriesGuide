@@ -11,45 +11,42 @@ namespace SeriesGuide.Core.Models
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
 
-        private Dictionary<int, List<Episode>> added = new Dictionary<int, List<Episode>>();
-        public IDictionary<int, List<Episode>> Added => added;
+        public Dictionary<int, List<Episode>> Added = new Dictionary<int, List<Episode>>();
 
-        private List<Film> toWatchList = new List<Film>();
-        public IEnumerable<object> ToWatchList => toWatchList;
+        private List<Film> ToWatchList = new List<Film>();
 
-        private List<Film> watchedList = new List<Film>();
-        public IEnumerable<Film> WatchedList => watchedList;
+        private List<Film> WatchedList = new List<Film>();
 
         public void AddEpisode(int idSerie,Episode episode)
         {
-            if (added.ContainsKey(idSerie))
-                added[idSerie].Add(episode);
+            if (Added.ContainsKey(idSerie))
+                Added[idSerie].Add(episode);
             else
-                added[idSerie] = new List<Episode> { episode };
+                Added[idSerie] = new List<Episode> { episode };
         }
 
         public void RemoveEpisode(int idSerie, Episode episode)
         {
-            added[idSerie].Remove(episode);
-            if (added[idSerie].Count == 0)
-                added.Remove(idSerie);
+            Added[idSerie].Remove(episode);
+            if (Added[idSerie].Count == 0)
+                Added.Remove(idSerie);
         }
         public void AddToWatchList(Film film)
         {
-            toWatchList.Add(film);
+            ToWatchList.Add(film);
         }
         public void RemoveFromToWatchList(Film film)
         {
-            toWatchList.Remove(film);
+            ToWatchList.Remove(film);
         }
 
         public void AddToWatchedList(Film film)
         {
-            watchedList.Add(film);
+            WatchedList.Add(film);
         }
         public void RemoveFromWatchedList(Film film)
         {
-            watchedList.Remove(film);
+            WatchedList.Remove(film);
         }
     }
 }

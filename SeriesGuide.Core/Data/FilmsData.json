@@ -1,77 +1,44 @@
 [
 	{
 		"Name": "Inception",
-		"Release date": new DateTime(2010),
-		"Reviews": 
-		[
-			{
-				"Rating": 10,
-				"Comment": "The best film I've ever seen!",
-				"AccountId": 0
-			},
-			{
-				"Rating": 9,
-				"Comment": "I enjoyed.",
-				"AccountId": 1
-			}
-		],
-		"Director": "Christopher Nolan",
-		"Country": "USA, UK",
+		"Release year": 2010,
+		"Reviews": [],
+		"Directors": "Christopher Nolan",
+		"Countries": "USA, UK",
 		"Actors": 
 		[
 			"Leonardo DiCaprio - Cobb",
 			"Joseph Gordon-Levitt - Arthur",
 			"Ellen Page - Ariadne"
 		],
+		"Description": ""
 	},
 	{
 		"Name": "Fight Club",
-		"Release date": new DateTime(1999),
-		"Reviews": 
-		[
-			{
-				"Rating": 10,
-				"Comment": "The best film I've ever seen!",
-				"AccountId": 0
-			},
-			{
-				"Rating": 9,
-				"Comment": "I enjoyed.",
-				"AccountId": 1
-			}
-		],
-		"Director": "David Fincher",
-		"Country": "USA, Germany",
+		"Release year": 1999,
+		"Reviews": [],
+		"Directors": "David Fincher",
+		"Countries": "USA, Germany",
 		"Actors": 
 		[
 			"Edward Norton - Narrator",
 			"Brad Pitt - Tyler Durden",
 			"Helena Bonham Carter - Maria Singer"
 		],
+		"Description": ""
 	},
 	{
 		"Name": "A beautiful mind",
-		"Release date": new DateTime(2001),
-		"Reviews": 
-		[
-			{
-				"Rating": 10,
-				"Comment": "The best film I've ever seen!",
-				"AccountId": 0
-			},
-			{
-				"Rating": 9,
-				"Comment": "I enjoyed.",
-				"AccountId": 1
-			}
-		],
-		"Director": "Ron Hovard",
-		"Country": "USA",
+		"Release year": 2001,
+		"Reviews": [],
+		"Directors": "Ron Hovard",
+		"Countries": "USA",
 		"Actors": 
 		[
 			"Russell Crowe - John Nash",
 			"Ed Harris - Parcher",
 			"Jennifer Connelly - Alicia Nash"
 		],
-	},
+		"Description": ""
+	}
 ]
