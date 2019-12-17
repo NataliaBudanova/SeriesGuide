@@ -2,6 +2,7 @@
 using SeriesGuide.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -49,9 +50,11 @@ namespace ClientApplication
 
             string login = Login.Text;
             string password = Password.Password;
-            if (Container.Default(true).Repositories[typeof(IRepository<Account>)].Any(x => x.Login == login & x.Password == password))
+            if(data.Any(x => x.Login == login & x.Password == password))
             {
-
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
             else
             {

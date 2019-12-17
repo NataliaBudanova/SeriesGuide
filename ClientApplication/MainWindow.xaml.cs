@@ -13,11 +13,11 @@ using System.Windows.Shapes;
 namespace ClientApplication
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindowRegisteredUser.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindowRegisteredUser : Window
+    public partial class MainWindow : Window
     {
-        public MainWindowRegisteredUser()
+        public MainWindow()
         {
             InitializeComponent();
         }
