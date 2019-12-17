@@ -22,7 +22,6 @@ namespace SeriesGuide.Core.ApplicationComponents
                     .ToDictionary(i => i.GetType(), i => (IRepository<object>)instance.Resolve(i.GetType()));
                 /*foreach (var item in instance.repositoryTypes)
                 {
-
                     instance.repositories[item.Key] = instance.Resolve(item.Key);
                 }*/
 
