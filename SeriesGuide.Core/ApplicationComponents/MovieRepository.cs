@@ -21,7 +21,7 @@ namespace SeriesGuide.Core.ApplicationComponents
             items.Add(item);
         }
 
-        private const string FileName = "MoviesData.json";
+        private const string FileName = "FilmsData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }
