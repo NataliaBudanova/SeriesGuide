@@ -30,7 +30,7 @@ namespace ClientApplication
 
         private void GetData()
         {
-            data = ((AccountRepository)Container.Default(true).Repositories[typeof(IRepository<Account>)]).Items;
+            data = Factory.Instance.accountRepository.Items;
         }
 
         private void WithoutAccount_button_click(object sender, RoutedEventArgs e)

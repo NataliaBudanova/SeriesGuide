@@ -10,7 +10,6 @@ namespace SeriesGuide.Core.ApplicationComponents
     {
         private Account currentAccount;
         private List<Account> items;
-        private IJsonConvertor convertor = new JsonConvertor();
 
         public Account CurrentAccount
         {
@@ -21,23 +20,22 @@ namespace SeriesGuide.Core.ApplicationComponents
             set
             {
                 currentAccount = value;
-                convertor.Save<AccountsData>(new AccountsData() {
+                JsonConvertor.Save<AccountsData>(new AccountsData() {
                     Current = currentAccount, Accounts = items 
                 }, Path.Combine(FolderPath, FileName));
             }
         }
         public IEnumerable<Account> Items => items;
 
-        public AccountRepository(IJsonConvertor convertor)
+        public AccountRepository()
         {
-            AccountsData data = convertor.UpLoad<AccountsData>(Path.Combine(FolderPath, FileName));
-
+            AccountsData data = JsonConvertor.UpLoad<AccountsData>(Path.Combine(FolderPath, FileName));
         }
 
         public void Add(Account item)
         {
             items.Add(item);
-            convertor.Save<AccountsData>(new AccountsData()
+            JsonConvertor.Save<AccountsData>(new AccountsData()
             {
                 Current = currentAccount,
                 Accounts = items
