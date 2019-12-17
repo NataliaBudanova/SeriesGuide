@@ -11,9 +11,9 @@ namespace SeriesGuide.Core.ApplicationComponents
         private List<Film> items;
         public IEnumerable<Film> Items => items;
 
-        public MovieRepository(IJsonConvertor convertor)
+        public MovieRepository()
         {
-            items = convertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FileName));
+            items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FileName));
         }
 
         public void Add(Film item)

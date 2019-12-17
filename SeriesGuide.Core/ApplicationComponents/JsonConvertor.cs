@@ -6,9 +6,9 @@ using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
 {
-    public class JsonConvertor: IJsonConvertor
+    static public class JsonConvertor
     {
-        public T UpLoad<T>(string path)
+        static public T UpLoad<T>(string path)
         {
             using(StreamReader sr = new StreamReader(path))
             {
@@ -20,7 +20,7 @@ namespace SeriesGuide.Core.ApplicationComponents
             }
         }
 
-        public void Save<T>(T item, string path)
+        static public void Save<T>(T item, string path)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
