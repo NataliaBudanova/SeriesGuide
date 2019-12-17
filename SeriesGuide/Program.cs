@@ -8,11 +8,10 @@ namespace SeriesGuide
     class Program
     {
        
-            static void Save(Dictionary<Type, Type> dataRepositoryTypes, string TypesFileName, string RepositoryTypesFileName)
+            static void Save(Dictionary<Type, Type> dataRepositoryTypes, string TypesFileName)
             {
                 IJsonConvertor convertor = new JsonConvertor();
-                /*convertor.Save<Dictionary<Type, Type>>(dataTypes, TypesFileName);*/
-                convertor.Save<Dictionary<Type, Type>>(dataRepositoryTypes, RepositoryTypesFileName);
+                convertor.Save<Dictionary<Type, Type>>(dataRepositoryTypes, TypesFileName);
             }
             static void Main(string[] args)
             {
@@ -22,11 +21,12 @@ namespace SeriesGuide
                 Container.Default(false).RegisterType<IRepository<Series>, SeriesRepository>();
                 Container.Default(false).RegisterType<IJsonConvertor, JsonConvertor>();
 
-                /*Container.Default(false).RegisterRepository<IRepository<Account>, AccountRepository>();
-                Container.Default(false).RegisterRepository<IRepository<Film>, MovieRepository>();
-                Container.Default(false).RegisterRepository<IRepository<Series>, SeriesRepository>();*/
-
                 Container.Default(false).SaveContainerTypes(Save);
-            }   
+
+                Container.Default(true).RegisterType<IJsonConvertor, JsonConvertor>();
+
+                Console.WriteLine($"{typeof(AccountRepository).GetInterfaces()[0].}");
+
+        }   
     }
 }
