@@ -24,7 +24,9 @@ namespace ClientApplication
 
         private void Back_button_click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
 
         private void Registration_button_click(object sender, RoutedEventArgs e)
