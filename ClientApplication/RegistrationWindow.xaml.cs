@@ -21,5 +21,15 @@ namespace ClientApplication
         {
             InitializeComponent();
         }
+
+        private void Back_button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Registration_button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
