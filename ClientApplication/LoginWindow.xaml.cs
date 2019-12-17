@@ -19,9 +19,17 @@ namespace ClientApplication
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private IEnumerable<Account> data;
+
         public LoginWindow()
         {
             InitializeComponent();
+            GetData();
+        }
+
+        private void GetData()
+        {
+            data = ((AccountRepository)Container.Default(true).Repositories[typeof(IRepository<Account>)]).Items;
         }
 
         private void WithoutAccount_button_click(object sender, RoutedEventArgs e)
@@ -39,18 +47,18 @@ namespace ClientApplication
         private void Login_button_click(object sender, RoutedEventArgs e)
         {
 
-            //string login = Login.Text;
-            //string password = Password.Password;
-            //if (Container.Default(true).Repositories[typeof(IRepository<Account>)].Any(x => x.Login == login & x.Password == password))
-            //{
+            string login = Login.Text;
+            string password = Password.Password;
+            if (Container.Default(true).Repositories[typeof(IRepository<Account>)].Any(x => x.Login == login & x.Password == password))
+            {
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("This account doesn't exists.", "Error!");
-            //    Login.Text = "";
-            //    Password.Password = "";
-            //}
+            }
+            else
+            {
+                MessageBox.Show("This account doesn't exists.", "Error!");
+                Login.Text = "";
+                Password.Password = "";
+            }
         }
     }
 }
