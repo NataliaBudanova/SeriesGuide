@@ -17,12 +17,8 @@ namespace SeriesGuide.Core.ApplicationComponents
             {
                 IJsonConvertor convertor = new JsonConvertor();
                 instance.types = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, TypesFileName));
-                instance.repositoryTypes = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, RepositoryTypesFileName));
-                foreach (var item in instance.repositoryTypes)
-                {
-
-                    instance.Repositories[item.Key] = instance.Resolve(item.Key);
-                }
+                instance.repositories = instance.types.Where(i => (i.Key.GetType()).IsAssignableFrom(typeof(IRepository<object>)))
+                    .ToDictionary(i => i.GetType(), i => instance.Resolve(i.GetType()));
 
                 return instance;
             }
@@ -32,26 +28,11 @@ namespace SeriesGuide.Core.ApplicationComponents
         }
 
         private Dictionary<Type, Type> types = new Dictionary<Type, Type>();
-        public Dictionary<Type, object> Repositories = new Dictionary<Type, object>();
-        private Dictionary<Type, Type> repositoryTypes = new Dictionary<Type, Type>();
+        private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
 
-        public void SaveContainerTypes(Action<Dictionary<Type, Type>, Dictionary<Type, Type>, string, string> convertor)
+        public void SaveContainerTypes(Action<Dictionary<Type, Type>, string> convertor)
         {
-            convertor?.Invoke(types, repositoryTypes, Path.Combine(FolderPath, TypesFileName), Path.Combine(FolderPath, RepositoryTypesFileName));
-        }
-        /*public void UdateRepository(Type itemType,object item)
-        {
-            repositories[itemType].Add(item);
-        }*/
-
-        public void RegisterRepository<TInterface, TClass>()
-        {
-            RegisterRepository(typeof(TInterface), typeof(TClass));
-        }
-
-        private void RegisterRepository(Type interfaceType, Type classType)
-        {
-            repositoryTypes[interfaceType] = classType;
+            convertor?.Invoke(types, Path.Combine(FolderPath, TypesFileName));
         }
 
         public void RegisterType<TInterface, TClass>()
@@ -81,7 +62,6 @@ namespace SeriesGuide.Core.ApplicationComponents
             return (T)Resolve(typeof(T));
         }
 
-        private const string RepositoryTypesFileName = "RepositoryTypesData.json";
         private const string TypesFileName = "TypesData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
 
