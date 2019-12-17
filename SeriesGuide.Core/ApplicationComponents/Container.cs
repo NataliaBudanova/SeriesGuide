@@ -16,9 +16,15 @@ namespace SeriesGuide.Core.ApplicationComponents
             if (UpLoad)
             {
                 IJsonConvertor convertor = new JsonConvertor();
-                instance.types = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, TypesFileName));
-                instance.repositories = instance.types.Where(i => (i.Key.GetType()).IsAssignableFrom(typeof(IRepository<object>)))
-                    .ToDictionary(i => i.GetType(), i => instance.Resolve(i.GetType()));
+                /*instance.types = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, TypesFileName));*/
+                instance.repositoryTypes = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, RepositoryTypesFileName));
+                instance.repositories = instance.repositoryTypes.Where(i => typeof(IRepository<object>).IsAssignableFrom(i.Key))
+                    .ToDictionary(i => i.GetType(), i => (IRepository<object>)instance.Resolve(i.GetType()));
+                /*foreach (var item in instance.repositoryTypes)
+                {
+
+                    instance.repositories[item.Key] = instance.Resolve(item.Key);
+                }*/
 
                 return instance;
             }
@@ -27,12 +33,27 @@ namespace SeriesGuide.Core.ApplicationComponents
 
         }
 
-        private Dictionary<Type, Type> types = new Dictionary<Type, Type>();
-        private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
+        /*private Dictionary<Type, Type> types = new Dictionary<Type, Type>();*/
+        private Dictionary<Type, IRepository<object>> repositories = new Dictionary<Type, IRepository<object>>();
+        private Dictionary<Type, Type> repositoryTypes = new Dictionary<Type, Type>();
 
-        public void SaveContainerTypes(Action<Dictionary<Type, Type>, string> convertor)
+        public void SaveContainerTypes(Action<Dictionary<Type, Type>, string, string> convertor)
         {
-            convertor?.Invoke(types, Path.Combine(FolderPath, TypesFileName));
+            convertor?.Invoke(repositoryTypes, Path.Combine(FolderPath, TypesFileName), Path.Combine(FolderPath, RepositoryTypesFileName));
+        }
+        /*public void UdateRepository(Type itemType,object item)
+        {
+            repositories[itemType].Add(item);
+        }*/
+
+        public void RegisterRepository<TInterface, TClass>()
+        {
+            RegisterRepository(typeof(TInterface), typeof(TClass));
+        }
+
+        private void RegisterRepository(Type interfaceType, Type classType)
+        {
+            repositoryTypes[interfaceType] = classType;
         }
 
         public void RegisterType<TInterface, TClass>()
@@ -62,6 +83,7 @@ namespace SeriesGuide.Core.ApplicationComponents
             return (T)Resolve(typeof(T));
         }
 
+        private const string RepositoryTypesFileName = "RepositoryTypesData.json";
         private const string TypesFileName = "TypesData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
 
