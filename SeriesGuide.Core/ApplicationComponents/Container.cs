@@ -21,7 +21,7 @@ namespace SeriesGuide.Core.ApplicationComponents
                 foreach (var item in instance.repositoryTypes)
                 {
 
-                    instance.repositories[item.Key] = instance.Resolve(item.Key);
+                    instance.Repositories[item.Key] = instance.Resolve(item.Key);
                 }
                 
                 return instance;
@@ -32,7 +32,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         }
 
         private Dictionary<Type, Type> types = new Dictionary<Type, Type>();
-        private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
+        public Dictionary<Type, object> Repositories = new Dictionary<Type, object>();
         private Dictionary<Type, Type> repositoryTypes = new Dictionary<Type, Type>();
 
         public void SaveContainerTypes(Action<Dictionary<Type, Type>, Dictionary<Type, Type>, string, string> convertor)
