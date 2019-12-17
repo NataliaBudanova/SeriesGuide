@@ -16,28 +16,30 @@ namespace SeriesGuide.Core.ApplicationComponents
             if (UpLoad)
             {
                 IJsonConvertor convertor = new JsonConvertor();
-                instance.types = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, TypesFileName));
+                /*instance.types = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, TypesFileName));*/
                 instance.repositoryTypes = convertor.UpLoad<Dictionary<Type, Type>>(Path.Combine(FolderPath, RepositoryTypesFileName));
-                foreach (var item in instance.repositoryTypes)
+                instance.repositories = instance.repositoryTypes.Where(i => typeof(IRepository<object>).IsAssignableFrom(i.Key))
+                    .ToDictionary(i => i.GetType(), i => (IRepository<object>)instance.Resolve(i.GetType()));
+                /*foreach (var item in instance.repositoryTypes)
                 {
 
                     instance.repositories[item.Key] = instance.Resolve(item.Key);
-                }
-                
+                }*/
+
                 return instance;
             }
             else
                 return instance;
-
+        
         }
 
-        private Dictionary<Type, Type> types = new Dictionary<Type, Type>();
-        private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
+        /*private Dictionary<Type, Type> types = new Dictionary<Type, Type>();*/
+        private Dictionary<Type, IRepository<object>> repositories = new Dictionary<Type,IRepository<object>>();
         private Dictionary<Type, Type> repositoryTypes = new Dictionary<Type, Type>();
 
-        public void SaveContainerTypes(Action<Dictionary<Type, Type>, Dictionary<Type, Type>, string, string> convertor)
+        public void SaveContainerTypes(Action<Dictionary<Type, Type>, string, string> convertor)
         {
-            convertor?.Invoke(types, repositoryTypes, Path.Combine(FolderPath, TypesFileName), Path.Combine(FolderPath, RepositoryTypesFileName));
+            convertor?.Invoke(repositoryTypes, Path.Combine(FolderPath, TypesFileName), Path.Combine(FolderPath, RepositoryTypesFileName));
         }
         /*public void UdateRepository(Type itemType,object item)
         {

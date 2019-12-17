@@ -22,7 +22,7 @@ namespace SeriesGuide.Core.ApplicationComponents
             {
                 currentAccount = value;
                 convertor.Save<AccountsData>(new AccountsData() {
-                    current = currentAccount, accounts = items 
+                    Current = currentAccount, Accounts = items 
                 }, Path.Combine(FolderPath, FileName));
             }
         }
@@ -31,8 +31,8 @@ namespace SeriesGuide.Core.ApplicationComponents
         public AccountRepository(IJsonConvertor convertor)
         {
             AccountsData data = convertor.UpLoad<AccountsData>(Path.Combine(FolderPath, FileName));
-            currentAccount = data.current;
-            items = data.accounts;
+            currentAccount = data.Current;
+            items = data.Accounts;
         }
 
         public void Add(Account item)
@@ -40,8 +40,8 @@ namespace SeriesGuide.Core.ApplicationComponents
             items.Add(item);
             convertor.Save<AccountsData>(new AccountsData()
             {
-                current = currentAccount,
-                accounts = items
+                Current = currentAccount,
+                Accounts = items
             }, Path.Combine(FolderPath, FileName));
         }
 
