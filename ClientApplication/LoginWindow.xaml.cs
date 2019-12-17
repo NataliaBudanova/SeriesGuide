@@ -52,6 +52,7 @@ namespace ClientApplication
             string password = Password.Password;
             if(data.Any(x => x.Login == login & x.Password == password))
             {
+                Factory.Instance.accountRepository.CurrentAccount = data.First(x => x.Login == login);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();

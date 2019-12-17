@@ -6,12 +6,8 @@ namespace SeriesGuide.Core.ApplicationComponents
 {
     public class Factory
     {
-        private static Factory instance = new Factory();
         private Factory() { }
-        public static Factory Instance
-        {
-            get { return instance; }
-        }
+        public static Factory Instance { get; } = new Factory();
 
         public AccountRepository accountRepository = new AccountRepository();
         public SeriesRepository seriesRepository = new SeriesRepository();
