@@ -31,8 +31,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         public AccountRepository(IJsonConvertor convertor)
         {
             AccountsData data = convertor.UpLoad<AccountsData>(Path.Combine(FolderPath, FileName));
-            currentAccount = data.Current;
-            items = data.Accounts;
+
         }
 
         public void Add(Account item)
