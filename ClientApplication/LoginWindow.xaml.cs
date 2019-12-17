@@ -36,21 +36,21 @@ namespace ClientApplication
             this.Close();
         }
 
-        private void Login_button_click(object sender, RoutedEventArgs e)
-        {
-            
-            //string login = Login.Text;
-            //string password = Password.Password;
-            //if (Container.Default(true).Repositories[typeof(IRepository<Account>)].Any(x => x.Login == login & x.Password == password))
-            //{
+        //private void Login_button_click(object sender, RoutedEventArgs e)
+        //{
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("This account doesn't exists.", "Error!");
-            //    Login.Text = "";
-            //    Password.Password = "";
-            //}
-        }
+        //    string login = Login.Text;
+        //    string password = Password.Password;
+        //    if (Container.Default(true).Repositories[typeof(IRepository<Account>)].Any(x => x.Login == login & x.Password == password))
+        //    {
+
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("This account doesn't exists.", "Error!");
+        //        Login.Text = "";
+        //        Password.Password = "";
+        //    }
+        //}
     }
 }
