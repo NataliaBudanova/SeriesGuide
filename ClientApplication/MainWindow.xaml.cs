@@ -79,13 +79,16 @@ namespace ClientApplication
         {
             if (watchListBox.SelectedItem != null)
             {
-
+                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchListBox.SelectedItem);
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromToWatchList(selectedFilm);
+                watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList;
             }
         }
 
         private void NewFilmsSearch_Button_click(object sender, RoutedEventArgs e)
         {
             recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.Equals(NewFilmSearch.Text));
+            NewFilmSearch.Text = "";
         }
 
         private void NewFilmsDetails_Button_click(object sender, RoutedEventArgs e)
@@ -105,6 +108,12 @@ namespace ClientApplication
 
         private void NewFilmsAddToWatched_Button_click(object sender, RoutedEventArgs e)
         {
+            if (recentFilmsBox.SelectedItem != null)
+            {
+                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == recentFilmsBox.SelectedItem);
+                Factory.Instance.accountRepository.CurrentAccount.AddToWatched(selectedFilm);
+                watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched;
+            }
 
         }
 
@@ -120,7 +129,9 @@ namespace ClientApplication
 
         private void WatchedDelete_Button_click(object sender, RoutedEventArgs e)
         {
-
+            Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);
+            Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched(selectedFilm);
+            watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched;
         }
 
         private void NewFilmsBack_Button_click(object sender, RoutedEventArgs e)
