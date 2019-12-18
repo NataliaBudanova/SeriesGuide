@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
@@ -40,6 +41,16 @@ namespace SeriesGuide.Core.ApplicationComponents
             JsonConvertor.Save<AccountsData>(new AccountsData()
             {
                 Current = currentAccount,
+                Accounts = items
+            }, Path.Combine(FolderPath, FileName));
+        }
+
+        public void Remove(int Id)
+        {
+            items.Remove(items.First(a => a.Id == Id));
+            JsonConvertor.Save<AccountsData>(new AccountsData()
+            {
+                Current = null,
                 Accounts = items
             }, Path.Combine(FolderPath, FileName));
         }
