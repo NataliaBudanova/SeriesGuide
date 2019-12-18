@@ -16,6 +16,13 @@ namespace SeriesGuide.Core.Models
         private List<Film> ToWatchList = new List<Film>();
 
         private List<Film> WatchedList = new List<Film>();
+        public Account(int id, string login, string phoneNumber, string password)
+        {
+            Id = id;
+            Login = login;
+            PhoneNumber = phoneNumber;
+            Password = password;
+        }
 
         public void AddEpisode(int idSerie,Episode episode)
         {

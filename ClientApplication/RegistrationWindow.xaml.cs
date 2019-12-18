@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using SeriesGuide.Core.ApplicationComponents;
+using SeriesGuide.Core.ClientApplicationComponents;
 
 namespace ClientApplication
 {
@@ -31,6 +23,13 @@ namespace ClientApplication
 
         private void Registration_button_click(object sender, RoutedEventArgs e)
         {
+            string message;
+            if (RegisterManager.IsValid(Name.Text,PhoneNumber.Text,Password1.Password,Password2.Password, out message))
+                RegisterManager.RegistrateAccount(Name.Text, PhoneNumber.Text, Password1.Password);
+            else
+            {
+                MessageBox.Show(message);
+            }
 
         }
     }
