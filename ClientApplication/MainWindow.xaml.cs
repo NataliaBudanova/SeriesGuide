@@ -23,6 +23,8 @@ namespace ClientApplication
         {
             InitializeComponent();
             recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.RecentSeries.Select(s => s.Name);
+            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.ReсentFilms.Select(f => f.Name);
+            addedBox.ItemsSource = Factory.Instance.seriesRepository.Items.Select(s => s.Name);
         }
 
         private void AddedSearch_Button_click(object sender, RoutedEventArgs e)
