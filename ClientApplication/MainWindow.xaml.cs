@@ -134,9 +134,12 @@ namespace ClientApplication
 
         private void WatchedDelete_Button_click(object sender, RoutedEventArgs e)
         {
-            Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);
-            Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched(selectedFilm);
-            watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched;
+            if (watchedBox.SelectedItem != null)
+            {
+                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched(selectedFilm);
+                watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched;
+            }
         }
 
         private void NewFilmsBack_Button_click(object sender, RoutedEventArgs e)
