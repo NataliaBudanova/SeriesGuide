@@ -23,7 +23,22 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="addedBox" Margin="5" DisplayMemberPath="Name" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <ListBox Name="addedBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding ReleaseYear}" Grid.Column="1" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding Countries}" Grid.Column="2" Margin="5"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <StackPanel Grid.Column="1">
                                 <Button Margin="5" Cursor="Hand" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDetails_Button_click">Show details</Button>
@@ -38,7 +53,22 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="recentSeriesBox" Margin="5" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <ListBox Name="recentSeriesBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding ReleaseYear}" Grid.Column="1" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding Countries}" Grid.Column="2" Margin="5"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <StackPanel Grid.Column="1">
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesDetails_Button_click">Show details</Button>
@@ -58,7 +88,22 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="watchListBox" Margin="5" DisplayMemberPath="Name" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <ListBox Name="watchListBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding ReleaseYear}" Grid.Column="1" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding Countries}" Grid.Column="2" Margin="5"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <StackPanel Grid.Column="1">
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchListSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchListDetails_Button_click">Show details</Button>
@@ -73,7 +118,22 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="recentFilmsBox" Margin="5" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <ListBox Name="recentFilmsBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding ReleaseYear}" Grid.Column="1" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding Countries}" Grid.Column="2" Margin="5"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <StackPanel Grid.Column="1">
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsDetails_Button_click">Show details</Button>
@@ -90,7 +150,22 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="watchedBox" Margin="5" DisplayMemberPath="Name" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <ListBox Name="watchedBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding ReleaseYear}" Grid.Column="1" Margin="5"></TextBlock>
+                                            <TextBlock Text="{Binding Countries}" Grid.Column="2" Margin="5"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <StackPanel Grid.Column="1">
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchedSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchedDetails_Button_click">Show details</Button>
