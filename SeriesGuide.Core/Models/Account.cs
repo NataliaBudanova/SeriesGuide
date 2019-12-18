@@ -13,12 +13,9 @@ namespace SeriesGuide.Core.Models
 
         public Dictionary<int, List<Episode>> Added = new Dictionary<int, List<Episode>>();
 
-        private List<Film> watchList = new List<Film>();
+        public List<Film> watchList { get; }
+        public List<Film> watched { get; }
 
-        private List<Film> watched = new List<Film>();
-
-        public IEnumerable<Film> WatchList => watchList;
-        public IEnumerable<Film> Watched => watched;
         public Account(int id, string login, string phoneNumber, string password)
         {
             Id = id;
@@ -32,6 +29,7 @@ namespace SeriesGuide.Core.Models
             if (Added.ContainsKey(idSerie))
                 Added[idSerie].Add(episode);
             else
+                if(!Added[idSerie].Contains(episode))
                 Added[idSerie] = new List<Episode> { episode };
         }
 
@@ -43,19 +41,23 @@ namespace SeriesGuide.Core.Models
         }
         public void AddToWatchList(Film film)
         {
-            watchList.Add(film);
+            if (!watchList.Contains(film))
+                watchList.Add(film);
         }
         public void RemoveFromToWatchList(Film film)
         {
-            watchList.Remove(film);
+            if(watchList.Contains(film))
+                watchList.Remove(film);
         }
 
         public void AddToWatched(Film film)
         {
-            watched.Add(film);
+            if(!watched.Contains(film))
+                watched.Add(film);
         }
         public void RemoveFromWatched(Film film)
         {
+            if(watched.Contains(film))
             watched.Remove(film);
         }
     }
