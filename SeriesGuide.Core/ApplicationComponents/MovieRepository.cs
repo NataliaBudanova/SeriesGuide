@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
@@ -9,11 +10,14 @@ namespace SeriesGuide.Core.ApplicationComponents
     public class MovieRepository : IRepository<Film>
     {
         private List<Film> items;
+        private List<Film> resentFilms;
         public IEnumerable<Film> Items => items;
+        public IEnumerable<Film> ResentFilms => resentFilms;
 
         public MovieRepository()
         {
             items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FileName));
+            resentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 2)).ToList();
         }
 
         public void Add(Film item)
