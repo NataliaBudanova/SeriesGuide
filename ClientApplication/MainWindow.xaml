@@ -88,7 +88,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="WatchListBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                            <ListBox Name="watchListBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -150,7 +150,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="WatchedBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                            <ListBox Name="watchedBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
