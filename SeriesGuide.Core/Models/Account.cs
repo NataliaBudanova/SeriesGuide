@@ -15,7 +15,7 @@ namespace SeriesGuide.Core.Models
 
         private List<Film> ToWatchList = new List<Film>();
 
-        private List<Film> WatchedList = new List<Film>();
+        private List<Film> Watched = new List<Film>();
         public Account(int id, string login, string phoneNumber, string password)
         {
             Id = id;
@@ -47,13 +47,13 @@ namespace SeriesGuide.Core.Models
             ToWatchList.Remove(film);
         }
 
-        public void AddToWatchedList(Film film)
+        public void AddToWatched(Film film)
         {
-            WatchedList.Add(film);
+            Watched.Add(film);
         }
-        public void RemoveFromWatchedList(Film film)
+        public void RemoveFromWatched(Film film)
         {
-            WatchedList.Remove(film);
+            Watched.Remove(film);
         }
     }
 }

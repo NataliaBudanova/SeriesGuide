@@ -1,4 +1,5 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
+using SeriesGuide.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace ClientApplication
 
         private void NewSeriesAdd_Button_click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void WatchListSearch_Button_click(object sender, RoutedEventArgs e)
@@ -84,7 +85,8 @@ namespace ClientApplication
 
         private void NewFilmsAddToWatchList_Button_click(object sender, RoutedEventArgs e)
         {
-
+            Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f.Name == recentFilmsBox.SelectedItem);
+            Factory.Instance.accountRepository.CurrentAccount.AddToWatchList(selectedFilm);
         }
 
         private void NewFilmsAddToWatched_Button_click(object sender, RoutedEventArgs e)
@@ -108,6 +110,31 @@ namespace ClientApplication
         }
 
         private void ChangeLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddedUpdate_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewFilmsBack_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WatchedUpdate_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WatchListUpdate_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewSeriesBack_Button_click(object sender, RoutedEventArgs e)
         {
 
         }
