@@ -55,6 +55,17 @@ namespace SeriesGuide.Core.ApplicationComponents
             }, Path.Combine(FolderPath, FileName));
         }
 
+        public void UpdateAccount(int Id)
+        {
+            items.Remove(items.First(a => a.Id == Id));
+            items.Add(currentAccount);
+            JsonConvertor.Save<AccountsData>(new AccountsData()
+            {
+                Current = currentAccount,
+                Accounts = items
+            }, Path.Combine(FolderPath, FileName));
+        }
+
         private const string FileName = "AccountsData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
