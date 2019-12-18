@@ -1,0 +1,22 @@
+﻿<Window x:Class="ClientApplication.SeriesDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientApplication"
+        mc:Ignorable="d"
+        Title="SeriesDetails" Height="600" Width="700" Background="Transparent">
+    <Border CornerRadius="25">
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="HotPink" Offset="0.0"></GradientStop>
+                <GradientStop Color="MediumPurple" Offset="0.7"/>
+                <GradientStop Color="BlueViolet" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+
+        </Grid>
+    </Border>
+
+</Window>
