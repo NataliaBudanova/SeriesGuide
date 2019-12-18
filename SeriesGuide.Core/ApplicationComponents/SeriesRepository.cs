@@ -10,15 +10,15 @@ namespace SeriesGuide.Core.ApplicationComponents
     public class SeriesRepository : IRepository<Series>
     {
         private List<Series> items;
-        private List<Series> resentSeries;
+        private List<Series> recentSeries;
         public IEnumerable<Series> Items => items;
 
-        public IEnumerable<Series> ResentSeries => resentSeries;
+        public IEnumerable<Series> RecentSeries => recentSeries;
 
         public SeriesRepository()
         {
             items = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, FileName));
-            resentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 20)).ToList();
+            recentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 20)).ToList();
         }
 
         public void Add(Series item)

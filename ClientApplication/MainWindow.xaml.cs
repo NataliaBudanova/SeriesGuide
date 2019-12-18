@@ -1,6 +1,7 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +22,7 @@ namespace ClientApplication
         public MainWindow()
         {
             InitializeComponent();
-            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.ResentSeries;
+            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.RecentSeries.Select(s => s.Name);
         }
 
         private void AddedSearch_Button_click(object sender, RoutedEventArgs e)

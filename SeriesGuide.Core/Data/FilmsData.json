@@ -1,7 +1,7 @@
 [
 	{
 		"Name": "Inception",
-		"Release year": 2010,
+		"ReleaseYear": 2010,
 		"Reviews": [],
 		"Directors": "Christopher Nolan",
 		"Countries": "USA, UK",
@@ -15,7 +15,7 @@
 	},
 	{
 		"Name": "Fight Club",
-		"Release year": 1999,
+		"ReleaseYear": 1999,
 		"Reviews": [],
 		"Directors": "David Fincher",
 		"Countries": "USA, Germany",
@@ -29,7 +29,7 @@
 	},
 	{
 		"Name": "A beautiful mind",
-		"Release year": 2001,
+		"ReleaseYear": 2001,
 		"Reviews": [],
 		"Directors": "Ron Hovard",
 		"Countries": "USA",
