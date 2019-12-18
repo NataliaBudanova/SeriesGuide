@@ -15,7 +15,19 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox IsReadOnly="True" Name="FilmName" Grid.ColumnSpan="3" Background="Transparent" BorderBrush="Transparent" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="30"></TextBox>
+            <TextBlock Grid.Row="1" Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="20">Year:</TextBlock>
         </Grid>
     </Border>
 </Window>

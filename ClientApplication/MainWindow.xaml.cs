@@ -93,7 +93,12 @@ namespace ClientApplication
 
         private void NewFilmsDetails_Button_click(object sender, RoutedEventArgs e)
         {
-
+            if (recentFilmsBox.SelectedItem != null)
+            {
+                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == recentFilmsBox.SelectedItem);
+                FilmDetails filmDetails = new FilmDetails(selectedFilm);
+                filmDetails.Show();
+            }
         }
 
         private void NewFilmsAddToWatchList_Button_click(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeriesGuide.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +18,10 @@ namespace ClientApplication
     /// </summary>
     public partial class FilmDetails : Window
     {
-        public FilmDetails()
+        public FilmDetails(Film CurrentFilm)
         {
             InitializeComponent();
+            FilmName.Text = CurrentFilm.Name;
         }
     }
 }
