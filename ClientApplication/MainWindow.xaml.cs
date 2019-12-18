@@ -136,8 +136,9 @@ namespace ClientApplication
         {
             if (watchedBox.SelectedItem != null)
             {
-                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);
-                Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched(selectedFilm);
+                /*Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);*/
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched((Film)watchedBox.SelectedItem);
+                watchedBox.ItemsSource = null;
                 watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched;
             }
         }
