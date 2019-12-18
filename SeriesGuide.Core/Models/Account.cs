@@ -13,9 +13,12 @@ namespace SeriesGuide.Core.Models
 
         public Dictionary<int, List<Episode>> Added = new Dictionary<int, List<Episode>>();
 
-        private List<Film> ToWatchList = new List<Film>();
+        private List<Film> toWatchList = new List<Film>();
 
-        private List<Film> Watched = new List<Film>();
+        private List<Film> watchedList = new List<Film>();
+
+        public IEnumerable<Film> ToWatchList => toWatchList;
+        public IEnumerable<Film> WatchedList => watchedList;
         public Account(int id, string login, string phoneNumber, string password)
         {
             Id = id;
@@ -40,20 +43,20 @@ namespace SeriesGuide.Core.Models
         }
         public void AddToWatchList(Film film)
         {
-            ToWatchList.Add(film);
+            toWatchList.Add(film);
         }
         public void RemoveFromToWatchList(Film film)
         {
-            ToWatchList.Remove(film);
+            toWatchList.Remove(film);
         }
 
-        public void AddToWatched(Film film)
+        public void AddToWatchedList(Film film)
         {
-            Watched.Add(film);
+            watchedList.Add(film);
         }
-        public void RemoveFromWatched(Film film)
+        public void RemoveFromWatchedList(Film film)
         {
-            Watched.Remove(film);
+            watchedList.Remove(film);
         }
     }
 }
