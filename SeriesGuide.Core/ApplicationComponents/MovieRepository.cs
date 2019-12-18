@@ -17,7 +17,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         public MovieRepository()
         {
             items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FileName));
-            resentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 2)).ToList();
+            resentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 20)).ToList();
         }
 
         public void Add(Film item)

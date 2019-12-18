@@ -18,7 +18,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         public SeriesRepository()
         {
             items = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, FileName));
-            resentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 2)).ToList();
+            resentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 20)).ToList();
         }
 
         public void Add(Series item)
