@@ -19,17 +19,32 @@
                 <TabControl Background="Transparent" BorderBrush="Transparent">
                     <TabItem Header="Added" Background="Transparent" BorderBrush="White" Width="100">
                         <Grid>
-                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="180"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ListBox Name="addedBox" Margin="5" DisplayMemberPath="Name" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <StackPanel Grid.Column="1">
+                                <Button Margin="5" Cursor="Hand" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedSearch_Button_click">Search</Button>
+                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDelete_Button_click">Show details</Button>
+                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDelete_Button_click">Delete</Button>
+                            </StackPanel>
+                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="White" Width="200" Margin="20" x:Name="NewSeries"></TextBox>
-                            <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="White" Height="18" Margin="20" Background="Transparent" Foreground="White" Click="SeriesSearch_Button_click">Search</Button>
+                            <ListBox Name="recentSeriesBox" Margin="5" DisplayMemberPath="Name" Background="Transparent" BorderBrush="Transparent"></ListBox>
+                            <StackPanel Grid.Column="1">
+                                <Button Margin="5" Cursor="Hand" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesSearch_Button_click">Search</Button>
+                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesDetails_Button_click">Show details</Button>
+                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesAdd_Button_click">Add to my list</Button>
+                            </StackPanel>
+                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -43,12 +58,16 @@
                     </TabItem>
                     <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="White" Width="200" Margin="20" x:Name="NewFilms"></TextBox>
-                            <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="White" Height="18" Margin="20" Background="Transparent" Foreground="White" Click="FilmsSearch_Button_click">Search</Button>
+                            <TextBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="White" Width="200" Margin="10" x:Name="NewFilms"></TextBox>
+                            <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="White" Height="18" Margin="10" Background="Transparent" Foreground="White" Click="FilmsSearch_Button_click">Search</Button>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Watched" Background="Transparent" BorderBrush="White" Width="100">

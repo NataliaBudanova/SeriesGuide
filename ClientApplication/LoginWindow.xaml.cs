@@ -66,7 +66,6 @@ namespace ClientApplication
             else
             {
                 MessageBox.Show("This account doesn't exists.", "Error!");
-                Login.Text = "";
                 Password.Password = "";
             }
         }
