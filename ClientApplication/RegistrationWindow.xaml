@@ -27,7 +27,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Foreground="White" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Name:</TextBlock>
+            <TextBlock Foreground="White" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Login:</TextBlock>
             <TextBlock Foreground="White" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Phone number:</TextBlock>
             <TextBlock Foreground="White" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Password:</TextBlock>
             <TextBlock Foreground="White" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Password again:</TextBlock>

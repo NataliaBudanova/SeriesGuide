@@ -15,7 +15,7 @@
             </LinearGradientBrush>
         </Border.Background>
         <TabControl Background="Transparent"  Margin="10" BorderBrush="Transparent">
-            <TabItem Header="Series" Background="Transparent" BorderBrush="White" Width="70">
+            <TabItem Header="Series" Background="Transparent" BorderBrush="White" Width="70" Height="20" VerticalAlignment="Top">
                 <TabControl Background="Transparent" BorderBrush="Transparent">
                     <TabItem Header="Added" Background="Transparent" BorderBrush="White" Width="100">
                         <Grid>
@@ -24,7 +24,12 @@
                     </TabItem>
                     <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
                         <Grid>
-                            <TextBox HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" Margin="30" x:Name="NewSeries"></TextBox>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="White" Width="200" Margin="20" x:Name="NewSeries"></TextBox>
+                            <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="White" Height="18" Margin="20" Background="Transparent" Foreground="White" Click="SeriesSearch_Button_click">Search</Button>
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -38,7 +43,12 @@
                     </TabItem>
                     <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
                         <Grid>
-                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="White" Width="200" Margin="20" x:Name="NewFilms"></TextBox>
+                            <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="White" Height="18" Margin="20" Background="Transparent" Foreground="White" Click="FilmsSearch_Button_click">Search</Button>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Watched" Background="Transparent" BorderBrush="White" Width="100">

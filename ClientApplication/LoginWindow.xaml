@@ -20,18 +20,16 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="140"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition Height="80"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="170"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock FontSize="40" FontWeight="Regular" Foreground="White" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">Series guide</TextBlock>
             <TextBlock Grid.Row="1" FontSize="30" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Right" Margin="10">Login:</TextBlock>
             <TextBlock Grid.Row="2" FontSize="30" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Right" Margin="10">Password:</TextBlock>
             <TextBox Height="45" BorderBrush="White" Foreground="White" Background="Transparent" Width="400" Grid.Row="1" Grid.Column="1" Margin="20" x:Name="Login" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
             <PasswordBox Height="45" Foreground="White" Background="Transparent" BorderBrush="White"  Width="400" Grid.Row="2" Grid.Column="1" Margin="20" x:Name="Password" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"></PasswordBox>
-            <Button BorderBrush="Transparent" Background="Transparent" Grid.Row="3" Grid.ColumnSpan="2" FontSize="30" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Margin="10" Click="WithoutAccount_button_click"><Underline>Continue without account</Underline></Button>
             <Button BorderBrush="White" Height="50" Width="200" Background="Transparent" Foreground="White"  Grid.Row="4" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" Grid.ColumnSpan="2" Click="Registration_button_click">Registration</Button>
             <Button Height="50" Width="200" BorderBrush="White" Background="Transparent" Foreground="White"  Grid.Row="4" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" FontSize="25" Click="Login_button_click" IsDefault="True">Login</Button>
         </Grid>

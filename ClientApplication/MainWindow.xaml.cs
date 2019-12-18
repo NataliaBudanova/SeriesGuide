@@ -21,5 +21,15 @@ namespace ClientApplication
         {
             InitializeComponent();
         }
+
+        private void FilmsSearch_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SeriesSearch_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
