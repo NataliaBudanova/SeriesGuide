@@ -74,8 +74,8 @@ namespace SeriesGuide.Core.Models
         {
             if (!Watched.Contains(film))
             {
-                Factory.Instance.accountRepository.UpdateAccount(Id);
                 Watched.Add(film);
+                Factory.Instance.accountRepository.UpdateAccount(Id);
             }
                 
         }

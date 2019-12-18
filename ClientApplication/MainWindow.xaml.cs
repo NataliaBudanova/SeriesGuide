@@ -79,8 +79,9 @@ namespace ClientApplication
         {
             if (watchListBox.SelectedItem != null)
             {
-                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchListBox.SelectedItem);
-                Factory.Instance.accountRepository.CurrentAccount.RemoveFromToWatchList(selectedFilm);
+                /*Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == (Film)watchListBox.SelectedItem);*/
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromToWatchList((Film)watchListBox.SelectedItem);
+                watchListBox.ItemsSource = null;
                 watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList;
             }
         }
@@ -136,8 +137,9 @@ namespace ClientApplication
         {
             if (watchedBox.SelectedItem != null)
             {
-                Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);
-                Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched(selectedFilm);
+                /*Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f == watchedBox.SelectedItem);*/
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromWatched((Film)watchedBox.SelectedItem);
+                watchedBox.ItemsSource = null;
                 watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched;
             }
         }
