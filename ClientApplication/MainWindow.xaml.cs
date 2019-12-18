@@ -23,9 +23,15 @@ namespace ClientApplication
         public MainWindow()
         {
             InitializeComponent();
-            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.RecentSeries.Select(s => s.Name);
-            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.ReсentFilms.Select(f => f.Name);
+            UpdateAll();
+        }
+        private void UpdateAll()
+        {
             addedBox.ItemsSource = Factory.Instance.seriesRepository.Items.Select(s => s.Name);
+            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.RecentSeries.Select(s => s.Name);
+            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Select(f => f.Name);
+            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.ReсentFilms.Select(f => f.Name);
+            watchedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched.Select(f => f.Name);
         }
 
         private void AddedSearch_Button_click(object sender, RoutedEventArgs e)
@@ -60,7 +66,7 @@ namespace ClientApplication
 
         private void WatchListSearch_Button_click(object sender, RoutedEventArgs e)
         {
-
+            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Where(f => f.Name.Equals(WatchListSearch));
         }
 
         private void WatchListDetails_Button_click(object sender, RoutedEventArgs e)
@@ -75,7 +81,7 @@ namespace ClientApplication
 
         private void NewFilmsSearch_Button_click(object sender, RoutedEventArgs e)
         {
-
+            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.Equals(NewFilmSearch.Text)).Select(f => f.Name);
         }
 
         private void NewFilmsDetails_Button_click(object sender, RoutedEventArgs e)
@@ -85,8 +91,9 @@ namespace ClientApplication
 
         private void NewFilmsAddToWatchList_Button_click(object sender, RoutedEventArgs e)
         {
-            Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f.Name == recentFilmsBox.SelectedItem);
+            Film selectedFilm = Factory.Instance.filmRepository.Items.First(f => f.Name.Equals(recentFilmsBox.SelectedItem.ToString()));
             Factory.Instance.accountRepository.CurrentAccount.AddToWatchList(selectedFilm);
+            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Select(f => f.Name);
         }
 
         private void NewFilmsAddToWatched_Button_click(object sender, RoutedEventArgs e)
@@ -109,32 +116,19 @@ namespace ClientApplication
 
         }
 
-        private void ChangeLogin_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddedUpdate_Button_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void NewFilmsBack_Button_click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void WatchedUpdate_Button_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void WatchListUpdate_Button_click(object sender, RoutedEventArgs e)
-        {
-
+            UpdateAll();
+            NewFilmSearch.Text = "";
         }
 
         private void NewSeriesBack_Button_click(object sender, RoutedEventArgs e)
+        {
+            UpdateAll();
+            NewSeriesSearch.Text = "";
+        }
+
+        private void ChangeLogin_Click(object sender, RoutedEventArgs e)
         {
 
         }

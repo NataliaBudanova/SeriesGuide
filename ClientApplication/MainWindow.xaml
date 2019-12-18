@@ -28,9 +28,8 @@
                                 <Button Margin="5" Cursor="Hand" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDetails_Button_click">Show details</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDelete_Button_click">Delete</Button>
-                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedUpdate_Button_click">Update</Button>
                             </StackPanel>
-                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
+                            <TextBox Name ="AddedSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
@@ -46,7 +45,7 @@
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesAdd_Button_click">Add to my list</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewSeriesBack_Button_click">Back</Button>
                             </StackPanel>
-                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
+                            <TextBox Name ="NewSeriesSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -64,9 +63,8 @@
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchListSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchListDetails_Button_click">Show details</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchListDelete_Button_click">Delete</Button>
-                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchListUpdate_Button_click">Update</Button>
                             </StackPanel>
-                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
+                            <TextBox Name ="WatchListSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Discover" Background="Transparent" BorderBrush="White" Width="100">
@@ -83,7 +81,7 @@
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsAddToWatched_Button_click">Add to watched</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsBack_Button_click">Back</Button>
                             </StackPanel>
-                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
+                            <TextBox Name ="NewFilmSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Watched" Background="Transparent" BorderBrush="White" Width="100">
@@ -97,9 +95,8 @@
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchedSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchedDetails_Button_click">Show details</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchedDelete_Button_click">Delete</Button>
-                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="WatchedUpdate_Button_click">Update</Button>
                             </StackPanel>
-                            <TextBox Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
+                            <TextBox Name ="WatchedSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
                         </Grid>
                     </TabItem>
                 </TabControl>
