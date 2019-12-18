@@ -13,6 +13,6 @@ namespace SeriesGuide.Core.Models
 
         public List<Episode> Episodes;
 
-        public Dictionary<int, List<int>> Added = new Dictionary<int, List<int>>();  // key - series id, in list - watched episodes IDs
+        public Dictionary<int, List<int>> Added = new Dictionary<int, List<int>>();  // key - series id, in list - Watched episodes IDs
     }
 }

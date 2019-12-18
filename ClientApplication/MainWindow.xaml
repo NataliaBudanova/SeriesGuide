@@ -88,7 +88,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="watchListBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                            <ListBox Name="WatchListBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -138,7 +138,7 @@
                                 <Button Margin="5" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsDetails_Button_click">Show details</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsAddToWatchList_Button_click">Add to watch list</Button>
-                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsAddToWatched_Button_click">Add to watched</Button>
+                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsAddToWatched_Button_click">Add to Watched</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="NewFilmsBack_Button_click">Back</Button>
                             </StackPanel>
                             <TextBox Name ="NewFilmSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130"></TextBox>
@@ -150,7 +150,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition Width="180"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <ListBox Name="watchedBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
+                            <ListBox Name="WatchedBox" Margin="5" Background="Transparent" BorderBrush="Transparent">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
