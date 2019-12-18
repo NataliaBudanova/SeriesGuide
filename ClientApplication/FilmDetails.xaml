@@ -16,18 +16,32 @@
         </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="330"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBox IsReadOnly="True" Name="FilmName" Grid.ColumnSpan="3" Background="Transparent" BorderBrush="Transparent" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="30"></TextBox>
-            <TextBlock Grid.Row="1" Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="20">Year:</TextBlock>
+            <TextBlock Name="Name" Grid.ColumnSpan="3" Background="Transparent" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="30"></TextBlock>
+            <TextBlock Grid.Row="1" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Total rate:</TextBlock>
+            <TextBlock Grid.Row="2" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Year:</TextBlock>
+            <TextBlock Grid.Row="3"  Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Countries:</TextBlock>
+            <TextBlock Grid.Row="4" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Directors:</TextBlock>
+            <TextBlock Name="TotalRate" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+            <TextBlock Name="Year" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+            <TextBlock Name="Countries" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+            <TextBlock Name="Directors" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2"  Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14">Actors:</TextBlock>
+            <ListBox Name="ActorsBox" Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Background="Transparent" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="14"></ListBox>
+            <TextBlock Grid.Row="5" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" FontSize="14">Description:</TextBlock>
+            <TextBlock Name="Description" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="14" Background="Transparent" Foreground="White" TextWrapping="Wrap"></TextBlock>
         </Grid>
     </Border>
 </Window>

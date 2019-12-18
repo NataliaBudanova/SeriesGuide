@@ -18,10 +18,17 @@ namespace ClientApplication
     /// </summary>
     public partial class FilmDetails : Window
     {
-        public FilmDetails(Film CurrentFilm)
+        public FilmDetails(Film currentFilm)
         {
             InitializeComponent();
-            FilmName.Text = CurrentFilm.Name;
+            Name.Text = currentFilm.Name;
+            TotalRate.Text = "";
+            Year.Text = currentFilm.ReleaseYear.ToString();
+            Countries.Text = currentFilm.Countries;
+            Directors.Text = currentFilm.Directors;
+            ActorsBox.ItemsSource = currentFilm.Actors;
+            Description.Text = currentFilm.Description;
+
         }
     }
 }
