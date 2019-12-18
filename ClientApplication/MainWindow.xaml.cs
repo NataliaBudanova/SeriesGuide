@@ -21,5 +21,10 @@ namespace ClientApplication
         {
             InitializeComponent();
         }
+
+        private void ChangeLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
