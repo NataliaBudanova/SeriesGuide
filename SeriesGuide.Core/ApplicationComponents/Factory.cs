@@ -11,7 +11,7 @@ namespace SeriesGuide.Core.ApplicationComponents
 
         public AccountRepository accountRepository = new AccountRepository();
         public SeriesRepository seriesRepository = new SeriesRepository();
-        public MovieRepository movieRepository = new MovieRepository();
+        public FilmRepository filmRepository = new FilmRepository();
 
         
     }

@@ -7,14 +7,14 @@ using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
 {
-    public class MovieRepository : IRepository<Film>
+    public class FilmRepository : IRepository<Film>
     {
         private List<Film> items;
         private List<Film> reсentFilms;
         public IEnumerable<Film> Items => items;
         public IEnumerable<Film> ReсentFilms => reсentFilms;
 
-        public MovieRepository()
+        public FilmRepository()
         {
             items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FileName));
             reсentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 20)).ToList();
