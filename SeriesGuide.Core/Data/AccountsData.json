@@ -53,7 +53,7 @@
       ]
     },
     {
-      "Id": 2,
+      "Id": 1,
       "Login": "david",
       "PhoneNumber": "+89031916478",
       "Password": "654321",
@@ -64,7 +64,7 @@
     }
   ],
   "Current": {
-    "Id": 1,
+    "Id": 0,
     "Login": "natusyakuu",
     "PhoneNumber": "+79852169992",
     "Password": "123456",

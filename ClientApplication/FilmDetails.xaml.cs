@@ -31,6 +31,7 @@ namespace ClientApplication
             Directors.Text = currentFilm.Directors;
             ActorsBox.ItemsSource = currentFilm.Actors;
             Description.Text = currentFilm.Description;
+            ReviewsBox.ItemsSource = null;
             ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentFilm.Id];
 
         }

@@ -40,7 +40,8 @@ namespace ClientApplication
             Seasons.Text = currentSeries.NumberOfSeasons.ToString();
             Description.Text = currentSeries.Description;
             ActorsBox.ItemsSource = currentSeries.Actors;
-            ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentSeries.Id];
+            ReviewsBox.ItemsSource = null;
+            ReviewsBox.ItemsSource = Factory.Instance.seriesRepository.Reviews[currentSeries.Id];
 
         }
 
@@ -58,7 +59,7 @@ namespace ClientApplication
                         CurrentRate.Text = "";
                         CurrentCommnet.Text = "";
                         ReviewsBox.ItemsSource = null;
-                        ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentSeries.Id];
+                        ReviewsBox.ItemsSource = Factory.Instance.seriesRepository.Reviews[currentSeries.Id];
                     }
                     else
                     {
