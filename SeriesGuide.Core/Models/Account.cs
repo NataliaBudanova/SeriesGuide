@@ -1,6 +1,7 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -32,13 +33,13 @@ namespace SeriesGuide.Core.Models
 
         private void FullfillAdded()
         {
-            List<Series> _series = Factory.Instance.seriesRepository.Items.ToList();
-            foreach (Series series in _series)
+            List<int> seriesIds = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath,SeriesFileName)).Select(s => s.Id).ToList();
+            foreach (int id in seriesIds)
             {
                 Added = new Dictionary<int, List<Episode>>();
-                if (!Added.ContainsKey(series.Id))
+                if (!Added.ContainsKey(id))
                 {
-                    Added.Add(series.Id, new List<Episode>());
+                    Added.Add(id, new List<Episode>());
                 }
             }
         }
@@ -123,5 +124,7 @@ namespace SeriesGuide.Core.Models
             }
             
         }
+        private const string SeriesFileName = "SeriesData.json";
+        private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }
