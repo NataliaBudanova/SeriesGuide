@@ -2,6 +2,7 @@
 	{
 		"Name": "Castle",
 		"ReleaseYear": 2009,
+		"Genre": "Fantastic",
 		"Directors": "Rob Bowman, John Terlesky, Bill Roe",
 		"Countries": "USA",
 		"Actors": 
@@ -31,28 +32,28 @@
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 1,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 2,
 				"Name": "Nanny McDead",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 2,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 3,
 				"Name": "Hedge Fund Homeboys",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 3,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 4,
 				"Name": "Hell Hath No Fury",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 4,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 5,
 				"Name": "A Chill Goes Through Her Veins",
@@ -60,35 +61,35 @@
 
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 5,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 6,
 				"Name": "Always Buy Retail",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 6,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 7,
 				"Name": "Home Is Where the Heart Stops",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 7,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 8,
 				"Name": "Ghosts",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 8,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 9,
 				"Name": "Little Girl Lost",
 				"Description": ""
 			},
 			{
-				"EpisodeId": 0,
+				"EpisodeId": 9,
 				"SeasonNumber": 1,
 				"EpisodeNumber": 10,
 				"Name": "A Death in the Family",

@@ -11,6 +11,7 @@ namespace SeriesGuide.Core.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int ReleaseYear { get; set; }
+        public string Genre { get; set; }
         public string Directors { get; set; }
         public string Countries { get; set; }
         public List<string> Actors { get; set; }
