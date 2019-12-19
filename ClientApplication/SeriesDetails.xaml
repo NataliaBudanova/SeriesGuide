@@ -14,7 +14,7 @@
                 <GradientStop Color="BlueViolet" Offset="1"></GradientStop>
             </LinearGradientBrush>
         </Border.Background>
-        <TabControl Background="Transparent" BorderBrush="Transparent" Margin="5">
+        <TabControl Background="Transparent" BorderBrush="Transparent" Margin="10">
             <TabItem Header="Details" Background="Transparent" BorderBrush="White">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -82,12 +82,14 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
                         <RowDefinition></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock>Unwatched episodes:</TextBlock>
+                    <TextBlock Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14">Unwatched episodes:</TextBlock>
+                    <TextBlock Grid.Row="2" Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14">Watched episodes:</TextBlock>
+                    
                 </Grid>
             </TabItem>
         </TabControl>
