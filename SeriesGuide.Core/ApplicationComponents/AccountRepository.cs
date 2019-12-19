@@ -7,7 +7,7 @@ using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
 {
-    public class AccountRepository : IRepository<Account>
+    public class AccountRepository
     {
         private Account currentAccount;
         private List<Account> items;

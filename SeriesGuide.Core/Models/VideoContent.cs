@@ -15,6 +15,10 @@ namespace SeriesGuide.Core.Models
         public string Countries { get; set; }
         public List<string> Actors { get; set; }
         public string Description { get; set; }
+        public bool IfReviewAvailable(int id)
+        {
+            return !Reviews.Any(r => r.AccountId == id);
+        }
         public decimal GetTotalRating()
         {
             if (Reviews.Count() != 0)

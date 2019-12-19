@@ -6,10 +6,14 @@ namespace SeriesGuide.Core.Models
 {
     public class Film : VideoContent
     {
+
         public void AddReview(Review review)
         {
-            Reviews.Add(review);
-
+            if (IfReviewAvailable(review.AccountId))
+            {
+                Reviews.Add(review);
+            }
+                
         }
     }
 }

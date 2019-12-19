@@ -7,7 +7,7 @@ using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
 {
-    public class FilmRepository : IRepository<Film>
+    public class FilmRepository
     {
         private List<Film> items;
         private List<Film> reсentFilms;
@@ -20,13 +20,17 @@ namespace SeriesGuide.Core.ApplicationComponents
             reсentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 20)).ToList();
         }
 
-        public void Add(Film item)
-        {
-            items.Add(item);
-        }
-
         public void UdateFilm(Film film)
         {
+            items.Remove(items.First(f => f.Id == film.Id));
+            items.Add(film);
+            if (Factory.Instance.accountRepository.CurrentAccount.Watched.Any(f => f.Id == film.Id))
+                Factory.Instance.accountRepository.CurrentAccount.Watched
+                    .Remove(Factory.Instance.accountRepository.CurrentAccount.Watched.First(f => f.Id == film.Id));
+            if (Factory.Instance.accountRepository.CurrentAccount.WatchList.Any(f => f.Id == film.Id))
+                Factory.Instance.accountRepository.CurrentAccount.WatchList
+                    .Remove(Factory.Instance.accountRepository.CurrentAccount.Watched.First(f => f.Id == film.Id));
+            Factory.Instance.accountRepository.Items.Where(a => a.Watched.Any(f => f.Id == film.Id) || a.WatchList.Any(f => f.Id == film.Id))
 
         }
 

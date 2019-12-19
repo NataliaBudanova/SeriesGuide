@@ -7,7 +7,7 @@ using System.Text;
 
 namespace SeriesGuide.Core.ApplicationComponents
 {
-    public class SeriesRepository : IRepository<Series>
+    public class SeriesRepository
     {
         private List<Series> items;
         private List<Series> recentSeries;
@@ -19,11 +19,6 @@ namespace SeriesGuide.Core.ApplicationComponents
         {
             items = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, FileName));
             recentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 20)).ToList();
-        }
-
-        public void Add(Series item)
-        {
-            items.Add(item);
         }
 
         private const string FileName = "SeriesData.json";
