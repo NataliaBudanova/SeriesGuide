@@ -24,6 +24,10 @@ namespace SeriesGuide.Core.Models
             PhoneNumber = phoneNumber;
             Password = password;
         }
+        public void AddSeries(Series series)
+        {
+            if(Added)
+        }
 
         public void AddEpisode(int idSerie,Episode episode)
         {
@@ -31,20 +35,22 @@ namespace SeriesGuide.Core.Models
             {
                 Added[idSerie].Add(episode);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
-            }
-                
-            else
-                if (!Added[idSerie].Contains(episode))
-                {
-                    Added[idSerie] = new List<Episode> { episode };
-                    Factory.Instance.accountRepository.UpdateAccount(Id);
-                }
-                    
+            }  
+            else if (!Added[idSerie].Contains(episode))
+                 {
+                     Added[idSerie] = new List<Episode> { episode };
+                     Factory.Instance.accountRepository.UpdateAccount(Id);
+                 }          
         }
 
         public void RemoveEpisode(int idSerie, Episode episode)
         {
-            Added[idSerie].Remove(episode);
+            if (Added.ContainsKey(idSerie))
+            {
+                Added[idSerie].Remove(episode);
+                Factory.Instance.accountRepository.UpdateAccount(Id);
+            }
+                
             if (Added[idSerie].Count == 0)
             {
                 Added.Remove(idSerie);

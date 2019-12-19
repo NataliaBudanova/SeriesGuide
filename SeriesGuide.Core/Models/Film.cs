@@ -6,5 +6,10 @@ namespace SeriesGuide.Core.Models
 {
     public class Film : VideoContent
     {
+        public void AddReview(Review review)
+        {
+            Reviews.Add(review);
+
+        }
     }
 }
