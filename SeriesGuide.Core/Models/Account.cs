@@ -24,6 +24,10 @@ namespace SeriesGuide.Core.Models
             Login = login;
             PhoneNumber = phoneNumber;
             Password = password;
+            Added = new Dictionary<int, List<Episode>>();
+            AddedSeries = new List<Series>();
+            WatchList = new List<Film>();
+            Watched = new List<Film>();
         }
         public void AddSeries(Series series)
         {
