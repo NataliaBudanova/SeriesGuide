@@ -32,7 +32,7 @@ namespace ClientApplication
             watchListBox.ItemsSource = null;
             recentFilmsBox.ItemsSource = null;
             watchedBox.ItemsSource = null;
-            addedBox.ItemsSource = Factory.Instance.seriesRepository.Items;
+            addedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.AddedSeries;
             recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.RecentSeries;
             watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList;
             recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.ReсentFilms;
@@ -41,7 +41,8 @@ namespace ClientApplication
 
         private void AddedSearch_Button_click(object sender, RoutedEventArgs e)
         {
-
+            addedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.AddedSeries.Where(s => s.Name.ToLower().Contains(AddedSearch.Text.ToLower()));
+            AddedSearch.Text = "";
         }
 
         private void AddedDetails_Button_click(object sender, RoutedEventArgs e)
@@ -51,12 +52,18 @@ namespace ClientApplication
 
         private void AddedDelete_Button_click(object sender, RoutedEventArgs e)
         {
-
+            if (addedBox.SelectedItem != null)
+            {
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromAddedSeries((Series)addedBox.SelectedItem);
+                addedBox.ItemsSource = null;
+                addedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.AddedSeries;
+            }
         }
 
         private void NewSeriesSearch_Button_click(object sender, RoutedEventArgs e)
         {
-
+            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.Items.Where(s => s.Name.ToLower().Contains(AddedSearch.Text.ToLower()));
+            NewSeriesSearch.Text = "";
         }
 
         private void NewSeriesDetails_Button_click(object sender, RoutedEventArgs e)
@@ -66,12 +73,17 @@ namespace ClientApplication
 
         private void NewSeriesAdd_Button_click(object sender, RoutedEventArgs e)
         {
-           
+            if (recentSeriesBox.SelectedItem != null)
+            {
+                Factory.Instance.accountRepository.CurrentAccount.AddSeries((Series)recentSeriesBox.SelectedItem);
+                addedBox.ItemsSource = null;
+                addedBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.AddedSeries;
+            }
         }
 
         private void WatchListSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Where(f => f.Name.StartsWith(WatchListSearch.Text));
+            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Where(f => f.Name.ToLower().Contains(WatchListSearch.Text.ToLower()));
             WatchListSearch.Text = "";
         }
 
@@ -93,7 +105,7 @@ namespace ClientApplication
 
         private void NewFilmsSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.StartsWith(NewFilmSearch.Text));
+            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.ToLower().Contains(NewFilmSearch.Text.ToLower()));
             NewFilmSearch.Text = "";
         }
 
@@ -129,7 +141,7 @@ namespace ClientApplication
 
         private void WatchedSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            recentFilmsBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched.Where(f => f.Name.StartsWith(WatchedSearch.Text));
+            recentFilmsBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched.Where(f => f.Name.ToLower().Contains(WatchedSearch.Text.ToLower()));
             NewFilmSearch.Text = "";
         }
 
