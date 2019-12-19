@@ -32,8 +32,10 @@ namespace SeriesGuide.Core.Models
 
         private void FullfillAdded()
         {
-            foreach (Series series in Factory.Instance.seriesRepository.Items)
+            List<Series> _series = Factory.Instance.seriesRepository.Items.ToList();
+            foreach (Series series in _series)
             {
+                Added = new Dictionary<int, List<Episode>>();
                 if (!Added.ContainsKey(series.Id))
                 {
                     Added.Add(series.Id, new List<Episode>());
