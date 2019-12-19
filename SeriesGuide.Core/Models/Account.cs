@@ -24,11 +24,23 @@ namespace SeriesGuide.Core.Models
             Login = login;
             PhoneNumber = phoneNumber;
             Password = password;
-            Added = new Dictionary<int, List<Episode>>();
             AddedSeries = new List<Series>();
             WatchList = new List<Film>();
             Watched = new List<Film>();
+            FullfillAdded();
         }
+
+        private void FullfillAdded()
+        {
+            foreach (Series series in Factory.Instance.seriesRepository.Items)
+            {
+                if (!Added.ContainsKey(series.Id))
+                {
+                    Added.Add(series.Id, new List<Episode>());
+                }
+            }
+        }
+
         public void AddSeries(Series series)
         {
             if (!AddedSeries.Contains(series))
@@ -44,7 +56,7 @@ namespace SeriesGuide.Core.Models
             if (AddedSeries.Contains(series))
             {
                 AddedSeries.Remove(series);
-                Added.Remove(series.Id);
+                Added[series.Id] = new List<Episode>();
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
