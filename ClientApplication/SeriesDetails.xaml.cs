@@ -24,7 +24,9 @@ namespace ClientApplication
         public SeriesDetails(Series CurrentSeries)
         {
             InitializeComponent();
-            ReviewsBox.ItemsSource = null;
+            WatchedEpisodes.ItemsSource = null;
+            UnwatchedEpisodes.ItemsSource = null;
+           ReviewsBox.ItemsSource = null;
             ActorsBox.ItemsSource = null;
             currentSeries = CurrentSeries;
             Name.Text = currentSeries.Name;
