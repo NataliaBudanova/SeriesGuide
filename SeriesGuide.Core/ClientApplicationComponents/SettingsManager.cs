@@ -67,7 +67,7 @@ namespace SeriesGuide.Core.ClientApplicationComponents
 
         public static void LogOut()
         {
-            Factory.Instance.accountRepository.DeleteAccount(Factory.)
+            /*Factory.Instance.accountRepository.DeleteAccount(Factory.)*/
         }
     }
 }
