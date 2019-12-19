@@ -13,13 +13,14 @@ namespace SeriesGuide.Core.Models
         public int NumberOfSeasons { get; set; }
 
         public List<Episode> Episodes;
-        public void AddReview(Review review)
+        public bool AddReview(Review review)
         {
             if (IfReviewAvailable(review.AccountId))
             {
                 Factory.Instance.seriesRepository.UpdateReviews(Id, review);
+                return true;
             }
-
+            return false;
         }
 
         public decimal GetTotalRating()
@@ -31,7 +32,7 @@ namespace SeriesGuide.Core.Models
                 return 0;
         }
 
-        public bool IfReviewAvailable(int id)
+        private bool IfReviewAvailable(int id)
         {
             return !Factory.Instance.seriesRepository.Reviews[Id].Any(r => r.AccountId == id);
         }

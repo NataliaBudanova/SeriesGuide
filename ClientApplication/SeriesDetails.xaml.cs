@@ -19,9 +19,12 @@ namespace ClientApplication
     /// </summary>
     public partial class SeriesDetails : Window
     {
-        public SeriesDetails(Series currentSeries)
+        private Series currentSeries;
+        public SeriesDetails(Series CurrentSeries)
         {
+
             InitializeComponent();
+            currentSeries = CurrentSeries;
             Name.Text = currentSeries.Name;
             TotalRate.Text = currentSeries.GetTotalRating().ToString();
             if (currentSeries.IsEnded)
@@ -37,12 +40,42 @@ namespace ClientApplication
             Seasons.Text = currentSeries.NumberOfSeasons.ToString();
             Description.Text = currentSeries.Description;
             ActorsBox.ItemsSource = currentSeries.Actors;
+            ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentSeries.Id];
 
         }
 
         private void AddReview_Button_click(object sender, RoutedEventArgs e)
         {
-
+            if (Int32.TryParse(CurrentRate.Text, out int currentRate))
+            {
+                if (currentRate <= 10)
+                {
+                    int currentId = Factory.Instance.accountRepository.CurrentAccount.Id;
+                    string currentLogin = Factory.Instance.accountRepository.CurrentAccount.Login;
+                    Review currentReview = new Review(currentRate, CurrentCommnet.Text, currentId, currentLogin);
+                    if (currentSeries.AddReview(currentReview))
+                    {
+                        CurrentRate.Text = "";
+                        CurrentCommnet.Text = "";
+                        ReviewsBox.ItemsSource = null;
+                        ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentSeries.Id];
+                    }
+                    else
+                    {
+                        MessageBox.Show("You've alredy writtren a review for this series!");
+                    }
+                }
+                else
+                {
+                    CurrentRate.Text = "";
+                    MessageBox.Show("Rate should be less than 10!");
+                }
+            }
+            else
+            {
+                CurrentRate.Text = "";
+                MessageBox.Show("Rate should be integer!");
+            }
         }
     }
 }

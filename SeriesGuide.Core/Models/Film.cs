@@ -9,12 +9,14 @@ namespace SeriesGuide.Core.Models
     public class Film : VideoContent
     {
 
-        public void AddReview(Review review)
+        public bool AddReview(Review review)
         {
             if (IfReviewAvailable(review.AccountId))
             {
                 Factory.Instance.filmRepository.UpdateReviews(Id, review);
+                return true;
             }
+            return false;
                 
         }
 
@@ -27,7 +29,7 @@ namespace SeriesGuide.Core.Models
                 return 0;
         }
 
-        public bool IfReviewAvailable(int id)
+        private bool IfReviewAvailable(int id)
         {
             return !Factory.Instance.filmRepository.Reviews[Id].Any(r => r.AccountId == id);
         }

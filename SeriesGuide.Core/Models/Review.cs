@@ -10,6 +10,14 @@ namespace SeriesGuide.Core.Models
         public string Comment { get; set; }
         public int AccountId { get; set; }
         public string Login { get; set; }
+
+        public Review(int rating, string comment, int accountId, string login)
+        {
+            Rating = rating;
+            Comment = comment;
+            AccountId = accountId;
+            Login = login;
+        }
     }
 }
 
