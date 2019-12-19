@@ -22,8 +22,10 @@ namespace ClientApplication
         private Film currentFilm;
         public FilmDetails(Film CurrentFilm)
         {
-            currentFilm = CurrentFilm;
             InitializeComponent();
+            ActorsBox.ItemsSource = null;
+            ReviewsBox.ItemsSource = null;
+            currentFilm = CurrentFilm;
             Name.Text = currentFilm.Name;
             TotalRate.Text = $"{currentFilm.GetTotalRating().ToString()}/10";
             Year.Text = currentFilm.ReleaseYear.ToString();
@@ -31,7 +33,6 @@ namespace ClientApplication
             Directors.Text = currentFilm.Directors;
             ActorsBox.ItemsSource = currentFilm.Actors;
             Description.Text = currentFilm.Description;
-            ReviewsBox.ItemsSource = null;
             ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentFilm.Id];
 
         }
