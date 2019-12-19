@@ -44,7 +44,7 @@ namespace SeriesGuide.Core.Models
             if (AddedSeries.Contains(series))
             {
                 AddedSeries.Remove(series);
-                Added.Remove(series.Id);
+                Added[series.Id] = new List<Episode>();
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
