@@ -60,7 +60,7 @@ namespace SeriesGuide.Core.Models
             }
                
         }
-        public void RemoveFromToWatchList(Film film)
+        public void RemoveFromWatchList(Film film)
         {
             if(WatchList.Contains(film))
             {
