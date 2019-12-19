@@ -3,6 +3,7 @@
     "Id": 0,
     "Name": "Inception",
     "ReleaseYear": 2010,
+	"Genre": "Fantastic",
     "Directors": "Christopher Nolan",
     "Countries": "USA, UK",
     "Actors": [
@@ -16,6 +17,7 @@
     "Id": 1,
     "Name": "Fight Club",
     "ReleaseYear": 1999,
+	"Genre": "Fantastic",
     "Directors": "David Fincher",
     "Countries": "USA, Germany",
     "Actors": [
@@ -29,12 +31,55 @@
     "Id": 2,
     "Name": "A beautiful mind",
     "ReleaseYear": 2001,
+	"Genre": "Fantastic",
     "Directors": "Ron Hovard",
     "Countries": "USA",
     "Actors": [
       "Russell Crowe - John Nash",
       "Ed Harris - Parcher",
       "Jennifer Connelly - Alicia Nash"
+    ],
+    "Description": ""
+  },
+  {
+    "Id": 3,
+    "Name": "Joker",
+    "ReleaseYear": 2019,
+	"Genre": "Fantastic",
+    "Directors": "Todd Phillips",
+    "Countries": "USA, Canada",
+    "Actors": [
+      "Joaquin Phoenix - Arthur Fleck",
+      "Robert De Niro - Murray Franklin",
+      "Zazie Beetz - Sophie Dumond"
+    ],
+    "Description": ""
+  },
+  {
+    "Id": 4,
+    "Name": "Once Upon a Time... in Hollywood",
+    "ReleaseYear": 2019,
+	"Genre": "Fantastic",
+    "Directors": "Quentin Tarantino",
+    "Countries": "USA, UK, China",
+    "Actors": [
+		"Leonardo DiCaprio - Rick Dalton",
+		"Brad Pitt - Cliff Booth",
+		"Margot Robbie - Sharon Tate"
+    ],
+    "Description": ""
+  },
+  {
+    "Id": 5,
+    "Name": "Doctor Sleep",
+    "ReleaseYear": 2019,
+	"Genre": "Fantastic",
+    "Directors": "Mike Flanagan",
+    "Countries": "USA, UK",
+    "Actors": [
+		"Ewan McGragor - Dan Torrance",
+		"Rebecca Ferguson - Rose The Hat",
+		"Kyliegh Curran - Abra Stone"
     ],
     "Description": ""
   }

@@ -1,7 +1,6 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -14,10 +13,10 @@ namespace SeriesGuide.Core.Models
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
 
-        public Dictionary<int, List<Episode>> Added { get; set; }
-        public List<Series> AddedSeries { get; set; }
-        public List<Film> WatchList { get; set; }
-        public List<Film> Watched { get; set; }
+        public Dictionary<int, List<int>> Added { get; set; }
+        public List<int> AddedSeries { get; set; }
+        public List<int> WatchList { get; set; }
+        public List<int> Watched { get; set; }
 
         public Account(int id, string login, string phoneNumber, string password)
         {
@@ -25,82 +24,75 @@ namespace SeriesGuide.Core.Models
             Login = login;
             PhoneNumber = phoneNumber;
             Password = password;
-            AddedSeries = new List<Series>();
-            WatchList = new List<Film>();
-            Watched = new List<Film>();
+            AddedSeries = new List<int>();
+            WatchList = new List<int>();
+            Watched = new List<int>();
             FullfillAdded();
         }
 
         private void FullfillAdded()
         {
-            List<int> seriesIds = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath,SeriesFileName)).Select(s => s.Id).ToList();
-            foreach (int id in seriesIds)
+            List<Series> _series = Factory.Instance.seriesRepository.Items.ToList();
+            foreach (Series series in _series)
             {
-                Added = new Dictionary<int, List<Episode>>();
-                if (!Added.ContainsKey(id))
+                Added = new Dictionary<int, List<int>>();
+                if (!Added.ContainsKey(series.Id))
                 {
-                    Added.Add(id, new List<Episode>());
+                    Added.Add(series.Id, new List<int>());
                 }
             }
         }
 
         public void AddSeries(Series series)
         {
-            if (!AddedSeries.Contains(series))
+            if (!AddedSeries.Contains(series.Id))
             {
-                AddedSeries.Add(series);
-                Added.Add(series.Id, new List<Episode>());
+                AddedSeries.Add(series.Id);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
 
         public void RemoveFromAddedSeries(Series series)
         {
-            if (AddedSeries.Contains(series))
+            if (AddedSeries.Contains(series.Id))
             {
-                AddedSeries.Remove(series);
-                Added[series.Id] = new List<Episode>();
+                AddedSeries.Remove(series.Id);
+                Added[series.Id] = new List<int>();
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
 
-        public void AddEpisode(int idSerie,Episode episode)
+        public void AddEpisode(int seriesId, Episode episode)
         {
-            if (!Added.ContainsKey(idSerie))
+            if (!Added[seriesId].Contains(episode.EpisodeID))
             {
-                Added[idSerie] = new List<Episode> { episode };
-                AddedSeries.Add(Factory.Instance.seriesRepository.Items.First(s => s.Id == idSerie));
+                Added[seriesId].Add(episode.EpisodeID);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
-            }  
-            else if (!Added[idSerie].Contains(episode))
-                 {
-                    Added[idSerie].Add(episode);
-                    Factory.Instance.accountRepository.UpdateAccount(Id);
-                 }          
-        }
+            }
+        }     
 
-        public void RemoveEpisode(int idSerie, Episode episode)
+        public void RemoveEpisode(int seriesId, Episode episode)
         {
-            if (Added.ContainsKey(idSerie))
+            if (Added.ContainsKey(seriesId))
             {
-                Added[idSerie].Remove(episode);
+                Added[seriesId].Remove(episode.EpisodeID);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
         public void AddToWatchList(Film film)
         {
-            if (!WatchList.Contains(film))
+            if (!WatchList.Contains(film.Id))
             {
-                WatchList.Add(film);
+                WatchList.Add(film.Id);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
                
         }
         public void RemoveFromWatchList(Film film)
         {
-            if(WatchList.Contains(film))
+            if(WatchList.Contains(film.Id))
             {
-                WatchList.Remove(film);
+                WatchList.Remove(film.Id);
                 Factory.Instance.accountRepository.UpdateAccount(Id); 
             }
                 
@@ -108,23 +100,21 @@ namespace SeriesGuide.Core.Models
 
         public void AddToWatched(Film film)
         {
-            if (!Watched.Contains(film))
+            if (!Watched.Contains(film.Id))
             {
-                Watched.Add(film);
+                Watched.Add(film.Id);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
                 
         }
         public void RemoveFromWatched(Film film)
         {
-            if (Watched.Contains(film))
+            if (Watched.Contains(film.Id))
             {
-                Watched.Remove(film);
+                Watched.Remove(film.Id);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
             
         }
-        private const string SeriesFileName = "SeriesData.json";
-        private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }
