@@ -45,7 +45,7 @@ namespace SeriesGuide.Core.ApplicationComponents
             }, Path.Combine(FolderPath, FileName));
         }
 
-        public void Remove(int Id)
+        public void DeleteAccount(int Id)
         {
             items.Remove(items.First(a => a.Id == Id));
             JsonConvertor.Save<AccountsData>(new AccountsData()

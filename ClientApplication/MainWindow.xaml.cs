@@ -178,17 +178,25 @@ namespace ClientApplication
 
         private void ChangeLogin_Click(object sender, RoutedEventArgs e)
         {
-            SettingsManager.ChangeLogin(ChangeLoginTextBox.Text);
+            string message;
+            if(SettingsManager.ChangeLogin(ChangeLoginTextBox.Text, out message))
+            {
+                MessageBox.Show(message);
+            }
         }
         private void ChangePassword_Click(object sender, RoutedEventArgs e)
         {
-
+            string message;
+            if (SettingsManager.ChangePassword(ChangeLoginTextBox.Text, out message))
+            {
+                MessageBox.Show(message);
+            }
         }
 
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-
+            SettingsManager.LogOut();
         }
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
