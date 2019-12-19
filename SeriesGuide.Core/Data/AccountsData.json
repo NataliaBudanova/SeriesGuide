@@ -6,7 +6,7 @@
       "PhoneNumber": "+79852169992",
       "Password": "123456",
       "Added": {},
-      "AddedSeries": null,
+      "AddedSeries": [],
       "WatchList": [
         {
           "Id": 1,
@@ -58,7 +58,7 @@
       "PhoneNumber": "+89031916478",
       "Password": "654321",
       "Added": {},
-      "AddedSeries": null,
+      "AddedSeries": [],
       "WatchList": [],
       "Watched": []
     }
@@ -69,7 +69,7 @@
     "PhoneNumber": "+79852169992",
     "Password": "123456",
     "Added": {},
-    "AddedSeries": null,
+    "AddedSeries": [],
     "WatchList": [
       {
         "Id": 1,
