@@ -95,6 +95,8 @@ namespace ClientApplication
             {
                 unwatchedEpisodes.Remove((Episode)UnwatchedEpisodes.SelectedItem);
                 Factory.Instance.accountRepository.CurrentAccount.AddEpisode(currentSeries.Id, (Episode)UnwatchedEpisodes.SelectedItem);
+                WatchedEpisodes.ItemsSource = null;
+                UnwatchedEpisodes.ItemsSource = null;
                 WatchedEpisodes.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Added[currentSeries.Id];
                 UnwatchedEpisodes.ItemsSource = unwatchedEpisodes;
             }
@@ -105,6 +107,8 @@ namespace ClientApplication
             if (WatchedEpisodes.SelectedItem != null)
             {
                 Factory.Instance.accountRepository.CurrentAccount.RemoveEpisode(currentSeries.Id, (Episode)WatchedEpisodes.SelectedItem);
+                WatchedEpisodes.ItemsSource = null;
+                UnwatchedEpisodes.ItemsSource = null;
                 unwatchedEpisodes.Add((Episode)WatchedEpisodes.SelectedItem);
                 WatchedEpisodes.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Added[currentSeries.Id];
                 UnwatchedEpisodes.ItemsSource = unwatchedEpisodes;
