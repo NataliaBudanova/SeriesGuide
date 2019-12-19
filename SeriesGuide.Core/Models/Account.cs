@@ -34,6 +34,7 @@ namespace SeriesGuide.Core.Models
         {
             foreach (Series series in Factory.Instance.seriesRepository.Items)
             {
+                Added = new Dictionary<int, List<Episode>>();
                 if (!Added.ContainsKey(series.Id))
                 {
                     Added.Add(series.Id, new List<Episode>());
