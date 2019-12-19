@@ -89,7 +89,12 @@
                     </Grid.RowDefinitions>
                     <TextBlock Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14">Unwatched episodes:</TextBlock>
                     <TextBlock Grid.Row="2" Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14">Watched episodes:</TextBlock>
-                    
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="MoveEpisodeToWatched_Button_click">Move to watched</Button>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="3">
+                        <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="MoveEpisodeToUnwatched_Button_click">Move to unwatched</Button>
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>

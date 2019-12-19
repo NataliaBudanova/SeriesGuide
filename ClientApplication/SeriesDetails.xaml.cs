@@ -77,5 +77,15 @@ namespace ClientApplication
                 MessageBox.Show("Rate should be integer!");
             }
         }
+
+        private void MoveEpisodeToWatched_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MoveEpisodeToUnwatched_Button_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
