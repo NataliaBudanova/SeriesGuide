@@ -66,6 +66,15 @@ namespace SeriesGuide.Core.ApplicationComponents
             }, Path.Combine(FolderPath, FileName));
         }
 
+        public void UpdateCurrent()
+        {
+            JsonConvertor.Save<AccountsData>(new AccountsData()
+            {
+                Current = currentAccount,
+                Accounts = items
+            }, Path.Combine(FolderPath, FileName));
+        }
+
         private const string FileName = "AccountsData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }

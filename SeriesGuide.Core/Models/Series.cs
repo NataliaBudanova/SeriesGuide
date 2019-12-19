@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SeriesGuide.Core.ApplicationComponents;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SeriesGuide.Core.Models
@@ -11,7 +13,27 @@ namespace SeriesGuide.Core.Models
         public int NumberOfSeasons { get; set; }
 
         public List<Episode> Episodes;
+        public void AddReview(Review review)
+        {
+            if (IfReviewAvailable(review.AccountId))
+            {
+                Factory.Instance.seriesRepository.UpdateReviews(Id, review);
+            }
 
-        public Dictionary<int, List<int>> Added = new Dictionary<int, List<int>>();  // key - series id, in list - Watched episodes IDs
+        }
+
+        public decimal GetTotalRating()
+        {
+            var reviews = Factory.Instance.seriesRepository.Reviews;
+            if (reviews[Id].Count() != 0)
+                return reviews[Id].Sum(r => r.Rating) / reviews[Id].Count();
+            else
+                return 0;
+        }
+
+        public bool IfReviewAvailable(int id)
+        {
+            return !Factory.Instance.seriesRepository.Reviews[Id].Any(r => r.AccountId == id);
+        }
     }
 }

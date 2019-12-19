@@ -1,1 +1,129 @@
-{"Accounts":[{"Id":0,"Login":"natusyakuu","PhoneNumber":"+79852169992","Password":"123456","Added":{},"AddedSeries":null,"WatchList":[{"Id":0,"Name":"Fight Club","ReleaseYear":1999,"Reviews":[],"Directors":"David Fincher","Countries":"USA, Germany","Actors":["Edward Norton - Narrator","Brad Pitt - Tyler Durden","Helena Bonham Carter - Maria Singer"],"Description":""},{"Id":0,"Name":"A beautiful mind","ReleaseYear":2001,"Reviews":[],"Directors":"Ron Hovard","Countries":"USA","Actors":["Russell Crowe - John Nash","Ed Harris - Parcher","Jennifer Connelly - Alicia Nash"],"Description":""}],"Watched":[{"Id":0,"Name":"Inception","ReleaseYear":2010,"Reviews":[],"Directors":"Christopher Nolan","Countries":"USA, UK","Actors":["Leonardo DiCaprio - Cobb","Joseph Gordon-Levitt - Arthur","Ellen Page - Ariadne"],"Description":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."},{"Id":0,"Name":"Inception","ReleaseYear":2010,"Reviews":[],"Directors":"Christopher Nolan","Countries":"USA, UK","Actors":["Leonardo DiCaprio - Cobb","Joseph Gordon-Levitt - Arthur","Ellen Page - Ariadne"],"Description":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."},{"Id":0,"Name":"Fight Club","ReleaseYear":1999,"Reviews":[],"Directors":"David Fincher","Countries":"USA, Germany","Actors":["Edward Norton - Narrator","Brad Pitt - Tyler Durden","Helena Bonham Carter - Maria Singer"],"Description":""}]},{"Id":0,"Login":"natusyakuu","PhoneNumber":"+79852169992","Password":"123456","Added":{},"AddedSeries":null,"WatchList":[{"Id":0,"Name":"Fight Club","ReleaseYear":1999,"Reviews":[],"Directors":"David Fincher","Countries":"USA, Germany","Actors":["Edward Norton - Narrator","Brad Pitt - Tyler Durden","Helena Bonham Carter - Maria Singer"],"Description":""},{"Id":0,"Name":"A beautiful mind","ReleaseYear":2001,"Reviews":[],"Directors":"Ron Hovard","Countries":"USA","Actors":["Russell Crowe - John Nash","Ed Harris - Parcher","Jennifer Connelly - Alicia Nash"],"Description":""}],"Watched":[{"Id":0,"Name":"Inception","ReleaseYear":2010,"Reviews":[],"Directors":"Christopher Nolan","Countries":"USA, UK","Actors":["Leonardo DiCaprio - Cobb","Joseph Gordon-Levitt - Arthur","Ellen Page - Ariadne"],"Description":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."},{"Id":0,"Name":"Inception","ReleaseYear":2010,"Reviews":[],"Directors":"Christopher Nolan","Countries":"USA, UK","Actors":["Leonardo DiCaprio - Cobb","Joseph Gordon-Levitt - Arthur","Ellen Page - Ariadne"],"Description":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."},{"Id":0,"Name":"Fight Club","ReleaseYear":1999,"Reviews":[],"Directors":"David Fincher","Countries":"USA, Germany","Actors":["Edward Norton - Narrator","Brad Pitt - Tyler Durden","Helena Bonham Carter - Maria Singer"],"Description":""}]}],"Current":{"Id":0,"Login":"natusyakuu","PhoneNumber":"+79852169992","Password":"123456","Added":{},"AddedSeries":null,"WatchList":[{"Id":0,"Name":"Fight Club","ReleaseYear":1999,"Reviews":[],"Directors":"David Fincher","Countries":"USA, Germany","Actors":["Edward Norton - Narrator","Brad Pitt - Tyler Durden","Helena Bonham Carter - Maria Singer"],"Description":""},{"Id":0,"Name":"A beautiful mind","ReleaseYear":2001,"Reviews":[],"Directors":"Ron Hovard","Countries":"USA","Actors":["Russell Crowe - John Nash","Ed Harris - Parcher","Jennifer Connelly - Alicia Nash"],"Description":""}],"Watched":[{"Id":0,"Name":"Inception","ReleaseYear":2010,"Reviews":[],"Directors":"Christopher Nolan","Countries":"USA, UK","Actors":["Leonardo DiCaprio - Cobb","Joseph Gordon-Levitt - Arthur","Ellen Page - Ariadne"],"Description":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."},{"Id":0,"Name":"Inception","ReleaseYear":2010,"Reviews":[],"Directors":"Christopher Nolan","Countries":"USA, UK","Actors":["Leonardo DiCaprio - Cobb","Joseph Gordon-Levitt - Arthur","Ellen Page - Ariadne"],"Description":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."},{"Id":0,"Name":"Fight Club","ReleaseYear":1999,"Reviews":[],"Directors":"David Fincher","Countries":"USA, Germany","Actors":["Edward Norton - Narrator","Brad Pitt - Tyler Durden","Helena Bonham Carter - Maria Singer"],"Description":""}]}}
+{
+  "Accounts": [
+    {
+      "Id": 0,
+      "Login": "natusyakuu",
+      "PhoneNumber": "+79852169992",
+      "Password": "123456",
+      "Added": {},
+      "AddedSeries": null,
+      "WatchList": [
+        {
+          "Id": 1,
+          "Name": "Fight Club",
+          "ReleaseYear": 1999,
+          "Reviews": [],
+          "Directors": "David Fincher",
+          "Countries": "USA, Germany",
+          "Actors": [ "Edward Norton - Narrator", "Brad Pitt - Tyler Durden", "Helena Bonham Carter - Maria Singer" ],
+          "Description": ""
+        },
+        {
+          "Id": 2,
+          "Name": "A beautiful mind",
+          "ReleaseYear": 2001,
+          "Reviews": [],
+          "Directors": "Ron Hovard",
+          "Countries": "USA",
+          "Actors": [ "Russell Crowe - John Nash", "Ed Harris - Parcher", "Jennifer Connelly - Alicia Nash" ],
+          "Description": ""
+        }
+      ],
+      "Watched": [
+        {
+          "Id": 0,
+          "Name": "Inception",
+          "ReleaseYear": 2010,
+          "Reviews": [],
+          "Directors": "Christopher Nolan",
+          "Countries": "USA, UK",
+          "Actors": [ "Leonardo DiCaprio - Cobb", "Joseph Gordon-Levitt - Arthur", "Ellen Page - Ariadne" ],
+          "Description": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."
+        },
+        {
+          "Id": 1,
+          "Name": "Fight Club",
+          "ReleaseYear": 1999,
+          "Reviews": [],
+          "Directors": "David Fincher",
+          "Countries": "USA, Germany",
+          "Actors": [ "Edward Norton - Narrator", "Brad Pitt - Tyler Durden", "Helena Bonham Carter - Maria Singer" ],
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Login": "david",
+      "PhoneNumber": "+89031916478",
+      "Password": "654321",
+      "Added": {},
+      "AddedSeries": null,
+      "WatchList": [],
+      "Watched": []
+    }
+  ],
+  "Current": {
+    "Id": 1,
+    "Login": "natusyakuu",
+    "PhoneNumber": "+79852169992",
+    "Password": "123456",
+    "Added": {},
+    "AddedSeries": null,
+    "WatchList": [
+      {
+        "Id": 1,
+        "Name": "Fight Club",
+        "ReleaseYear": 1999,
+        "Reviews": [],
+        "Directors": "David Fincher",
+        "Countries": "USA, Germany",
+        "Actors": [ "Edward Norton - Narrator", "Brad Pitt - Tyler Durden", "Helena Bonham Carter - Maria Singer" ],
+        "Description": ""
+      },
+      {
+        "Id": 2,
+        "Name": "A beautiful mind",
+        "ReleaseYear": 2001,
+        "Reviews": [],
+        "Directors": "Ron Hovard",
+        "Countries": "USA",
+        "Actors": [ "Russell Crowe - John Nash", "Ed Harris - Parcher", "Jennifer Connelly - Alicia Nash" ],
+        "Description": ""
+      }
+    ],
+    "Watched": [
+      {
+        "Id": 0,
+        "Name": "Inception",
+        "ReleaseYear": 2010,
+        "Reviews": [],
+        "Directors": "Christopher Nolan",
+        "Countries": "USA, UK",
+        "Actors": [ "Leonardo DiCaprio - Cobb", "Joseph Gordon-Levitt - Arthur", "Ellen Page - Ariadne" ],
+        "Description": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."
+      },
+      {
+        "Id": 0,
+        "Name": "Inception",
+        "ReleaseYear": 2010,
+        "Reviews": [],
+        "Directors": "Christopher Nolan",
+        "Countries": "USA, UK",
+        "Actors": [ "Leonardo DiCaprio - Cobb", "Joseph Gordon-Levitt - Arthur", "Ellen Page - Ariadne" ],
+        "Description": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable."
+      },
+      {
+        "Id": 1,
+        "Name": "Fight Club",
+        "ReleaseYear": 1999,
+        "Reviews": [],
+        "Directors": "David Fincher",
+        "Countries": "USA, Germany",
+        "Actors": [ "Edward Norton - Narrator", "Brad Pitt - Tyler Durden", "Helena Bonham Carter - Maria Singer" ],
+        "Description": ""
+      }
+    ]
+  }
+
+}

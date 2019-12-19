@@ -11,30 +11,27 @@ namespace SeriesGuide.Core.ApplicationComponents
     {
         private List<Film> items;
         private List<Film> reсentFilms;
+        private Dictionary<int, List<Review>> reviews;
+        public IDictionary<int, List<Review>> Reviews => reviews;
         public IEnumerable<Film> Items => items;
         public IEnumerable<Film> ReсentFilms => reсentFilms;
 
         public FilmRepository()
         {
-            items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FileName));
+            reviews = JsonConvertor.UpLoad<Dictionary<int, List<Review>>>(Path.Combine(FolderPath, ReviewsFileName));
+            items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FilmFileName));
             reсentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 20)).ToList();
         }
 
-        public void UdateFilm(Film film)
+        public void UpdateReviews(int seriesId, Review review)
         {
-            items.Remove(items.First(f => f.Id == film.Id));
-            items.Add(film);
-            if (Factory.Instance.accountRepository.CurrentAccount.Watched.Any(f => f.Id == film.Id))
-                Factory.Instance.accountRepository.CurrentAccount.Watched
-                    .Remove(Factory.Instance.accountRepository.CurrentAccount.Watched.First(f => f.Id == film.Id));
-            if (Factory.Instance.accountRepository.CurrentAccount.WatchList.Any(f => f.Id == film.Id))
-                Factory.Instance.accountRepository.CurrentAccount.WatchList
-                    .Remove(Factory.Instance.accountRepository.CurrentAccount.Watched.First(f => f.Id == film.Id));
-            Factory.Instance.accountRepository.Items.Where(a => a.Watched.Any(f => f.Id == film.Id) || a.WatchList.Any(f => f.Id == film.Id))
-
+            reviews[seriesId].Add(review);
+            JsonConvertor.Save<Dictionary<int, List<Review>>>(reviews, Path.Combine(FolderPath, ReviewsFileName));
         }
 
-        private const string FileName = "FilmsData.json";
+
+        private const string FilmFileName = "FilmsData.json";
+        private const string ReviewsFileName = "FilmReviews.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }

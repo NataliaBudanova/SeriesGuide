@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SeriesGuide.Core.ApplicationComponents;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SeriesGuide.Core.Models
@@ -11,9 +13,23 @@ namespace SeriesGuide.Core.Models
         {
             if (IfReviewAvailable(review.AccountId))
             {
-                Reviews.Add(review);
+                Factory.Instance.filmRepository.UpdateReviews(Id, review);
             }
                 
+        }
+
+        public decimal GetTotalRating()
+        {
+            var reviews = Factory.Instance.filmRepository.Reviews;
+            if (reviews[Id].Count() != 0)
+                return reviews[Id].Sum(r => r.Rating) / reviews[Id].Count();
+            else
+                return 0;
+        }
+
+        public bool IfReviewAvailable(int id)
+        {
+            return !Factory.Instance.filmRepository.Reviews[Id].Any(r => r.AccountId == id);
         }
     }
 }

@@ -11,17 +11,27 @@ namespace SeriesGuide.Core.ApplicationComponents
     {
         private List<Series> items;
         private List<Series> recentSeries;
+        private Dictionary<int, List<Review>> reviews;
+        public IDictionary<int, List<Review>> Reviews => reviews;
         public IEnumerable<Series> Items => items;
 
         public IEnumerable<Series> RecentSeries => recentSeries;
 
         public SeriesRepository()
         {
-            items = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, FileName));
+            reviews = JsonConvertor.UpLoad<Dictionary<int, List<Review>>>(Path.Combine(FolderPath, ReviewsFileName));
+            items = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, SeriesFileName));
             recentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 20)).ToList();
         }
 
-        private const string FileName = "SeriesData.json";
+        public void UpdateReviews(int seriesId, Review review)
+        {
+            reviews[seriesId].Add(review);
+            JsonConvertor.Save<Dictionary<int, List<Review>>>(reviews, Path.Combine(FolderPath, ReviewsFileName));
+        }
+
+        private const string SeriesFileName = "SeriesData.json";
+        private const string ReviewsFileName = "SeriesReviews.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }
