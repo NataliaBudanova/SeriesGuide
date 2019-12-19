@@ -47,7 +47,8 @@ namespace ClientApplication
 
         private void AddedDetails_Button_click(object sender, RoutedEventArgs e)
         {
-
+            SeriesDetails seriesDetails = new SeriesDetails((Series)addedBox.SelectedItem);
+            seriesDetails.Show();
         }
 
         private void AddedDelete_Button_click(object sender, RoutedEventArgs e)
@@ -68,7 +69,8 @@ namespace ClientApplication
 
         private void NewSeriesDetails_Button_click(object sender, RoutedEventArgs e)
         {
-
+            SeriesDetails seriesDetails = new SeriesDetails((Series)recentSeriesBox.SelectedItem);
+            seriesDetails.Show();
         }
 
         private void NewSeriesAdd_Button_click(object sender, RoutedEventArgs e)

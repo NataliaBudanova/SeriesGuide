@@ -28,7 +28,6 @@ namespace ClientApplication
             Directors.Text = currentFilm.Directors;
             ActorsBox.ItemsSource = currentFilm.Actors;
             Description.Text = currentFilm.Description;
-            ReviewsBox.ItemsSource = currentFilm.Reviews;
 
         }
 
