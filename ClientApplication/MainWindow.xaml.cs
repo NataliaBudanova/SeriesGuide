@@ -71,7 +71,7 @@ namespace ClientApplication
 
         private void WatchListSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Where(f => f.Name.StartsWith(WatchListSearch.Text));
+            watchListBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.WatchList.Where(f => f.Name.ToLower().Contains(WatchListSearch.Text.ToLower()));
             WatchListSearch.Text = "";
         }
 
@@ -93,7 +93,7 @@ namespace ClientApplication
 
         private void NewFilmsSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.StartsWith(NewFilmSearch.Text));
+            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.ToLower().Contains(NewFilmSearch.Text.ToLower()));
             NewFilmSearch.Text = "";
         }
 
@@ -129,7 +129,7 @@ namespace ClientApplication
 
         private void WatchedSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            recentFilmsBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched.Where(f => f.Name.StartsWith(WatchedSearch.Text));
+            recentFilmsBox.ItemsSource = Factory.Instance.accountRepository.CurrentAccount.Watched.Where(f => f.Name.ToLower().Contains(WatchedSearch.Text.ToLower()));
             NewFilmSearch.Text = "";
         }
 

@@ -24,10 +24,10 @@ namespace SeriesGuide.Core.Models
             PhoneNumber = phoneNumber;
             Password = password;
         }
-        public void AddSeries(Series series)
-        {
-            if(Added)
-        }
+        //public void AddSeries(Series series)
+        //{
+        //    if(Added)
+        //}
 
         public void AddEpisode(int idSerie,Episode episode)
         {
