@@ -25,6 +25,11 @@ namespace SeriesGuide.Core.ApplicationComponents
             items.Add(item);
         }
 
+        public void UdateFilm(Film film)
+        {
+
+        }
+
         private const string FileName = "FilmsData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }

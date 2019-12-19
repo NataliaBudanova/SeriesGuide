@@ -6,7 +6,6 @@ namespace SeriesGuide.Core.Models
 {
     public class Series : VideoContent
     {
-        public int SeriesId { get; set; }
         public int? EndYear { get; set; }
         public bool IsEnded { get; set; }
         public int NumberOfSeasons { get; set; }
