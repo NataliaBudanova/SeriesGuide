@@ -1,4 +1,5 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
+using SeriesGuide.Core.ClientApplicationComponents;
 using SeriesGuide.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -177,7 +178,24 @@ namespace ClientApplication
 
         private void ChangeLogin_Click(object sender, RoutedEventArgs e)
         {
+            SettingsManager.ChangeLogin(ChangeLoginTextBox.Text);
+        }
+        private void ChangePassword_Click(object sender, RoutedEventArgs e)
+        {
 
         }
+
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }
