@@ -26,8 +26,13 @@ namespace SeriesGuide.Core.Models
         public decimal GetTotalRating()
         {
             var reviews = Factory.Instance.seriesRepository.Reviews;
-            if (reviews[Id].Count() != 0)
-                return reviews[Id].Sum(r => r.Rating) / reviews[Id].Count();
+            if (reviews.ContainsKey(Id))
+            {
+                if (reviews[Id].Count() != 0)
+                    return reviews[Id].Sum(r => r.Rating) / reviews[Id].Count();
+                else
+                    return 0;
+            }
             else
                 return 0;
         }
