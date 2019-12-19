@@ -32,7 +32,7 @@
             <TextBlock Foreground="White" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Password:</TextBlock>
             <TextBlock Foreground="White" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20" FontSize="20">Password again:</TextBlock>
             <TextBox Margin="20" HorizontalAlignment="Right" BorderBrush="White" Foreground="White" Grid.Column="1" Background="Transparent" Grid.Row="1" Name="Name" Height="45" Width="480" FontSize="30"></TextBox>
-            <TextBox Margin="20" HorizontalAlignment="Right" BorderBrush="White" Foreground="White" Grid.Column="1" Background="Transparent" Grid.Row="2" Name="PhoneNumber" Height="45" Width="480" FontSize="30"></TextBox>
+            <TextBox Margin="20" HorizontalAlignment="Right" BorderBrush="White" Foreground="White" Grid.Column="1" Background="Transparent" Grid.Row="2" x:Name="PhoneNumber" Height="45" Width="480" FontSize="30"></TextBox>
             <PasswordBox Margin="20" HorizontalAlignment="Right" BorderBrush="White" Foreground="White" Background="Transparent" Grid.Column="1" Grid.Row="3" Name="Password1" Height="45" Width="480" FontSize="30"></PasswordBox>
             <PasswordBox Margin="20" HorizontalAlignment="Right" BorderBrush="White" Foreground="White" Background="Transparent" Grid.Column="1" Grid.Row="4" Name="Password2" Height="45" Width="480" FontSize="30"></PasswordBox>
             <Button BorderBrush="White" Margin="20" Foreground="White" Grid.Row="6" Click="Back_button_click" HorizontalAlignment="Right" Width="100" Height="35" Background="Transparent" FontSize="20">Back</Button>
