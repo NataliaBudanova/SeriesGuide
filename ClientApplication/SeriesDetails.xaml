@@ -14,9 +14,83 @@
                 <GradientStop Color="BlueViolet" Offset="1"></GradientStop>
             </LinearGradientBrush>
         </Border.Background>
-        <Grid>
-
-        </Grid>
+        <TabControl Background="Transparent" BorderBrush="Transparent" Margin="5">
+            <TabItem Header="Details" Background="Transparent" BorderBrush="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
+                        <ColumnDefinition Width="330"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="Name" Grid.ColumnSpan="3" Background="Transparent" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="30"></TextBlock>
+                    <TextBlock Grid.Row="1" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Total rate:</TextBlock>
+                    <TextBlock Grid.Row="2" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Years:</TextBlock>
+                    <TextBlock Grid.Row="3"  Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Countries:</TextBlock>
+                    <TextBlock Grid.Row="4" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Directors:</TextBlock>
+                    <TextBlock Grid.Row="5" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Seasons:</TextBlock>
+                    <TextBlock Name="TotalRate" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+                    <TextBlock Name="Years" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+                    <TextBlock Name="Countries" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+                    <TextBlock Name="Directors" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+                    <TextBlock Name="Seasons" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14" Background="Transparent" Foreground="White"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="2"  Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="14">Actors:</TextBlock>
+                    <ListBox Name="ActorsBox" Grid.Row="2" Grid.Column="2" Grid.RowSpan="4" Background="Transparent" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="14"></ListBox>
+                    <TextBlock Grid.Row="6" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" FontSize="14">Description:</TextBlock>
+                    <TextBlock Name="Description" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="14" Background="Transparent" Foreground="White" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Grid.Row="7" Background="Transparent" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="14">Reviews:</TextBlock>
+                    <ListBox Name="ReviewsBox" Grid.Row="8" Grid.ColumnSpan="3" Background="Transparent" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="14">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Login}" Grid.Column="0" Margin="5"></TextBlock>
+                                    <TextBlock Text="{Binding Rating}" Grid.Column="1" Margin="5"></TextBlock>
+                                    <TextBlock Text="{Binding Comment}" Grid.ColumnSpan="2" Grid.Row="2" Margin="5"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock Grid.Row="9" Background="Transparent" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="20">Rate:</TextBlock>
+                    <TextBox Name="CurrentRate" Grid.Row="9" Background="Transparent" Foreground="White" BorderBrush="White" HorizontalAlignment="Right" VerticalAlignment="Center" Width="30" Height="30" FontSize="20"></TextBox>
+                    <TextBox Name="CurrentCommnet" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" BorderBrush="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Width="390" Height="30" TextWrapping="Wrap" FontSize="20"></TextBox>
+                    <Button Click="AddReview_Button_click" Grid.Row="9" Grid.Column="2" Background="Transparent" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" FontSize="20">Add a reмiew</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Episodes" Background="Transparent" BorderBrush="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock></TextBlock>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Border>
 
 </Window>

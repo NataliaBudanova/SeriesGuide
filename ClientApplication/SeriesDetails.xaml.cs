@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SeriesGuide.Core.ApplicationComponents;
+using SeriesGuide.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +19,30 @@ namespace ClientApplication
     /// </summary>
     public partial class SeriesDetails : Window
     {
-        public SeriesDetails()
+        public SeriesDetails(Series currentSeries)
         {
             InitializeComponent();
+            Name.Text = currentSeries.Name;
+            TotalRate.Text = currentSeries.GetTotalRating().ToString();
+            if (currentSeries.IsEnded)
+            {
+                Years.Text = $"{currentSeries.ReleaseYear}-{currentSeries.EndYear}";
+            }
+            else
+            {
+                Years.Text = $"{currentSeries.ReleaseYear}-now";
+            }
+            Countries.Text = currentSeries.Countries;
+            Directors.Text = currentSeries.Directors;
+            Seasons.Text = currentSeries.NumberOfSeasons.ToString();
+            Description.Text = currentSeries.Description;
+            ActorsBox.ItemsSource = currentSeries.Actors;
+
+        }
+
+        private void AddReview_Button_click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

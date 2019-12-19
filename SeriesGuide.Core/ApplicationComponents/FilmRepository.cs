@@ -30,7 +30,7 @@ namespace SeriesGuide.Core.ApplicationComponents
             if (Factory.Instance.accountRepository.CurrentAccount.WatchList.Any(f => f.Id == film.Id))
                 Factory.Instance.accountRepository.CurrentAccount.WatchList
                     .Remove(Factory.Instance.accountRepository.CurrentAccount.Watched.First(f => f.Id == film.Id));
-            Factory.Instance.accountRepository.Items.Where(a => a.Watched.Any(f => f.Id == film.Id) || a.WatchList.Any(f => f.Id == film.Id))
+            Factory.Instance.accountRepository.Items.Where(a => a.Watched.Any(f => f.Id == film.Id) || a.WatchList.Any(f => f.Id == film.Id));
 
         }
 
