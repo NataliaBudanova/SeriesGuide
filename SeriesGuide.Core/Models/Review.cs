@@ -9,6 +9,7 @@ namespace SeriesGuide.Core.Models
         public int Rating { get; set; }
         public string Comment { get; set; }
         public int AccountId { get; set; }
+        public string Login { get; set; }
     }
 }
 
