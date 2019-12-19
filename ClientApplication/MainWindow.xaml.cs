@@ -197,11 +197,15 @@ namespace ClientApplication
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             SettingsManager.LogOut();
+            new LoginWindow().Show();
+            this.Close();
         }
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            SettingsManager.DeleteAccount();
+            new LoginWindow().Show();
+            this.Close();
         }
 
         

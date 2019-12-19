@@ -45,9 +45,9 @@ namespace SeriesGuide.Core.ApplicationComponents
             }, Path.Combine(FolderPath, FileName));
         }
 
-        public void DeleteAccount(int Id)
+        public void DeleteAccount()
         {
-            items.Remove(items.First(a => a.Id == Id));
+            items.Remove(items.First(a => a.Id == currentAccount.Id));
             JsonConvertor.Save<AccountsData>(new AccountsData()
             {
                 Current = null,
