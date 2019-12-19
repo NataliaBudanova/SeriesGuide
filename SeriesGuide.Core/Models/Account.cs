@@ -1,6 +1,7 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SeriesGuide.Core.Models
@@ -12,8 +13,8 @@ namespace SeriesGuide.Core.Models
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
 
-        public Dictionary<int, List<Episode>> Added = new Dictionary<int, List<Episode>>();
-
+        public Dictionary<int, List<Episode>> Added { get; set; }
+        public List<Series> AddedSeries { get; set; }
         public List<Film> WatchList { get; set; }
         public List<Film> Watched { get; set; }
 
@@ -24,22 +25,38 @@ namespace SeriesGuide.Core.Models
             PhoneNumber = phoneNumber;
             Password = password;
         }
-        //public void AddSeries(Series series)
-        //{
-        //    if(Added)
-        //}
+        public void AddSeries(Series series)
+        {
+            if (!AddedSeries.Contains(series))
+            {
+                AddedSeries.Add(series);
+                Added.Add(series.Id, new List<Episode>());
+                Factory.Instance.accountRepository.UpdateAccount(Id);
+            }
+        }
+
+        public void RemoveFromAddedSeries(Series series)
+        {
+            if (AddedSeries.Contains(series))
+            {
+                AddedSeries.Remove(series);
+                Added.Remove(series.Id);
+                Factory.Instance.accountRepository.UpdateAccount(Id);
+            }
+        }
 
         public void AddEpisode(int idSerie,Episode episode)
         {
-            if (Added.ContainsKey(idSerie))
+            if (!Added.ContainsKey(idSerie))
             {
-                Added[idSerie].Add(episode);
+                Added[idSerie] = new List<Episode> { episode };
+                AddedSeries.Add(Factory.Instance.seriesRepository.Items.First(s => s.Id == idSerie));
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }  
             else if (!Added[idSerie].Contains(episode))
                  {
-                     Added[idSerie] = new List<Episode> { episode };
-                     Factory.Instance.accountRepository.UpdateAccount(Id);
+                    Added[idSerie].Add(episode);
+                    Factory.Instance.accountRepository.UpdateAccount(Id);
                  }          
         }
 
@@ -48,12 +65,6 @@ namespace SeriesGuide.Core.Models
             if (Added.ContainsKey(idSerie))
             {
                 Added[idSerie].Remove(episode);
-                Factory.Instance.accountRepository.UpdateAccount(Id);
-            }
-                
-            if (Added[idSerie].Count == 0)
-            {
-                Added.Remove(idSerie);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
