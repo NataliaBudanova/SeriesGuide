@@ -28,6 +28,7 @@ namespace SeriesGuide.Core.Models
             AddedSeries = new List<int>();
             WatchList = new List<int>();
             Watched = new List<int>();
+            Added = new Dictionary<int, List<int>>();
         }
 
         public void AddSeries(int seriesId)
