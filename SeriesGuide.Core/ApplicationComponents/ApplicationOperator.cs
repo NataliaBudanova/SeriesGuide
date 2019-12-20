@@ -21,15 +21,15 @@ namespace SeriesGuide.Core.ApplicationComponents
             }
         }
 
-        public static bool AddSeries(string name, string genre, List<string> actors, string directors, string countries, string description, List<Episode> episodes, string endYear, int releaseYear)
+        public static bool AddSeries(string name, string genre, List<string> actors, string directors, string countries, string description, List<Episode> episodes, string endYear, int releaseYear, int numberOfSeasons)
         {
-            if (Factory.Instance.filmRepository.Items.Any(f => f.Name == name && f.Actors == actors && f.Genre == genre && f.Directors == directors && f.Countries == countries))
+            if (Factory.Instance.seriesRepository.Items.Any(f => f.Name == name && f.Actors == actors && f.Genre == genre && f.Directors == directors && f.Countries == countries && f.NumberOfSeasons == numberOfSeasons))
             {
                 return false;
             }
             else
             {
-                Factory.Instance.seriesRepository.AddSeries(new Series(name: name, genre: genre, actors: actors, directors: directors, countries: countries, description: description, episodes:episodes,endYear:endYear,releaseYear:releaseYear));
+                Factory.Instance.seriesRepository.AddSeries(new Series(name: name, genre: genre, actors: actors, directors: directors, countries: countries, description: description, episodes:episodes,endYear:endYear,releaseYear:releaseYear, nubmerOfSeasons:numberOfSeasons));
                 return true;
             }
         }

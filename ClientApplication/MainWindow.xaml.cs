@@ -40,7 +40,12 @@ namespace ClientApplication
                     currentAccount.Added.Add(series.Id, new List<int>());
                 }
             }
-            Factory.Instance.accountRepository.UpdateAccount(currentAccount.Id);
+            if (Factory.Instance.accountRepository.CurrentAccount.Added != currentAccount.Added)
+            {
+                Factory.Instance.accountRepository.CurrentAccount = currentAccount;
+                Factory.Instance.accountRepository.UpdateAccount(currentAccount.Id);
+            }
+            
         }
         private void UpdateAll()
         {
@@ -86,14 +91,18 @@ namespace ClientApplication
         private void AddedSearch_Button_click(object sender, RoutedEventArgs e)
         {
             addedBox.ItemsSource = null;
-            addedBox.ItemsSource = GetAddedSeries().Where(s => s.Name.ToLower().Contains(AddedSearch.Text.ToLower()));
+            addedBox.ItemsSource = GetAddedSeries().Where(s => s.Name.ToLower().StartsWith(AddedSearch.Text.ToLower()));
             AddedSearch.Text = "";
         }
 
         private void AddedDetails_Button_click(object sender, RoutedEventArgs e)
         {
-            SeriesDetails seriesDetails = new SeriesDetails((Series)addedBox.SelectedItem);
-            seriesDetails.Show();
+            if(addedBox.SelectedItem != null)
+            {
+                SeriesDetails seriesDetails = new SeriesDetails((Series)addedBox.SelectedItem);
+                seriesDetails.Show();
+            }
+            
         }
 
         private void AddedDelete_Button_click(object sender, RoutedEventArgs e)
@@ -108,14 +117,18 @@ namespace ClientApplication
         private void NewSeriesSearch_Button_click(object sender, RoutedEventArgs e)
         {
             recentSeriesBox.ItemsSource = null;
-            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.Items.Where(s => s.Name.ToLower().Contains(AddedSearch.Text.ToLower()));
+            recentSeriesBox.ItemsSource = Factory.Instance.seriesRepository.Items.Where(s => s.Name.ToLower().StartsWith(AddedSearch.Text.ToLower()));
             NewSeriesSearch.Text = "";
         }
 
         private void NewSeriesDetails_Button_click(object sender, RoutedEventArgs e)
         {
-            SeriesDetails seriesDetails = new SeriesDetails((Series)recentSeriesBox.SelectedItem);
-            seriesDetails.Show();
+            if(recentSeriesBox.SelectedItem != null)
+            {
+                SeriesDetails seriesDetails = new SeriesDetails((Series)recentSeriesBox.SelectedItem);
+                seriesDetails.Show();
+            }
+            
 
         }
 
@@ -131,7 +144,7 @@ namespace ClientApplication
         private void WatchListSearch_Button_click(object sender, RoutedEventArgs e)
         {
             watchListBox.ItemsSource = null;
-            watchListBox.ItemsSource = GetWatchList().Where(f => f.Name.ToLower().Contains(WatchListSearch.Text.ToLower()));
+            watchListBox.ItemsSource = GetWatchList().Where(f => f.Name.ToLower().StartsWith(WatchListSearch.Text.ToLower()));
             WatchListSearch.Text = "";
         }
 
@@ -155,7 +168,7 @@ namespace ClientApplication
 
         private void NewFilmsSearch_Button_click(object sender, RoutedEventArgs e)
         {
-            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.ToLower().Contains(NewFilmSearch.Text.ToLower()));
+            recentFilmsBox.ItemsSource = Factory.Instance.filmRepository.Items.Where(f => f.Name.ToLower().StartsWith(NewFilmSearch.Text.ToLower()));
             NewFilmSearch.Text = "";
         }
 
@@ -190,7 +203,7 @@ namespace ClientApplication
         private void WatchedSearch_Button_click(object sender, RoutedEventArgs e)
         {
             recentFilmsBox.ItemsSource = null;
-            recentFilmsBox.ItemsSource = GetWatched().Where(f => f.Name.ToLower().Contains(WatchedSearch.Text.ToLower()));
+            recentFilmsBox.ItemsSource = GetWatched().Where(f => f.Name.ToLower().StartsWith(WatchedSearch.Text.ToLower()));
             NewFilmSearch.Text = "";
         }
 
