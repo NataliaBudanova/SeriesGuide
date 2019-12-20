@@ -28,20 +28,6 @@ namespace SeriesGuide.Core.Models
             AddedSeries = new List<int>();
             WatchList = new List<int>();
             Watched = new List<int>();
-            FullfillAdded();
-        }
-
-        private void FullfillAdded()
-        {
-            List<Series> _series = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, SeriesFileName));
-            foreach (Series series in _series)
-            {
-                Added = new Dictionary<int, List<int>>();
-                if (!Added.ContainsKey(series.Id))
-                {
-                    Added.Add(series.Id, new List<int>());
-                }
-            }
         }
 
         public void AddSeries(int seriesId)

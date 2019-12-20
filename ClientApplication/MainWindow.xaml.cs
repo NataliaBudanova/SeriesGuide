@@ -27,6 +27,20 @@ namespace ClientApplication
             InitializeComponent();
             currentAccount = Factory.Instance.accountRepository.CurrentAccount;
             UpdateAll();
+            FullfillAdded();
+        }
+
+        private void FullfillAdded()
+        {
+            List<Series> _series = Factory.Instance.seriesRepository.Items.ToList();
+            foreach (Series series in _series)
+            {
+                if (!currentAccount.Added.ContainsKey(series.Id))
+                {
+                    currentAccount.Added.Add(series.Id, new List<int>());
+                }
+            }
+            Factory.Instance.accountRepository.UpdateAccount(currentAccount.Id);
         }
         private void UpdateAll()
         {
