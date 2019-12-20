@@ -29,6 +29,14 @@ namespace SeriesGuide.Core.ApplicationComponents
             JsonConvertor.Save<Dictionary<int, List<Review>>>(reviews, Path.Combine(FolderPath, ReviewsFileName));
         }
 
+        public void AddFilm(Film film)
+        {
+            items.Add(film);
+            reviews[film.Id] = new List<Review>();
+            JsonConvertor.Save<List<Film>>(items, Path.Combine(FolderPath, FilmFileName));
+            JsonConvertor.Save<Dictionary<int, List<Review>>>(reviews, Path.Combine(FolderPath, ReviewsFileName));
+        }
+
 
         private const string FilmFileName = "FilmsData.json";
         private const string ReviewsFileName = "FilmReviews.json";

@@ -8,7 +8,17 @@ namespace SeriesGuide.Core.Models
 {
     public class Film : VideoContent
     {
-
+        public Film(string name, string genre, List<string> actors, string directors, string countries, string description , int releaseYear)
+        {
+            Name = name;
+            Genre = genre;
+            Actors = actors;
+            Directors = directors;
+            Countries = countries;
+            Description = description;
+            ReleaseYear = releaseYear;
+            Id = Factory.Instance.seriesRepository.Items.Count();
+        }
         public bool AddReview(Review review)
         {
             if (IfReviewAvailable(review.AccountId))
