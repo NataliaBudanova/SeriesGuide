@@ -23,8 +23,8 @@ namespace ClientApplication
         public FilmDetails(Film CurrentFilm)
         {
             InitializeComponent();
-            UpdateAll();
             currentFilm = CurrentFilm;
+            UpdateAll();
             Name.Text = currentFilm.Name;
             TotalRate.Text = $"{currentFilm.GetTotalRating().ToString()}/10";
             Year.Text = currentFilm.ReleaseYear.ToString();

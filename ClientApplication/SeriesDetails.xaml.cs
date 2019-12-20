@@ -21,12 +21,11 @@ namespace ClientApplication
     public partial class SeriesDetails : Window
     {
         private Series currentSeries;
-        private List<Episode> unwatchedEpisodes = new List<Episode>();
         public SeriesDetails(Series CurrentSeries)
         {
             InitializeComponent();
-            UpdateAll();
             currentSeries = CurrentSeries;
+            UpdateAll();
             Name.Text = currentSeries.Name;
             TotalRate.Text = currentSeries.GetTotalRating().ToString();
             if (currentSeries.IsEnded)
@@ -128,7 +127,7 @@ namespace ClientApplication
         {
             if (WatchedEpisodes.SelectedItem != null)
             {
-                Factory.Instance.accountRepository.CurrentAccount.Added[currentSeries.Id].Remove(((Episode)UnwatchedEpisodes.SelectedItem).EpisodeID);
+                Factory.Instance.accountRepository.CurrentAccount.Added[currentSeries.Id].Remove(((Episode)WatchedEpisodes.SelectedItem).EpisodeID);
                 UpdateAll();
             }
         }
