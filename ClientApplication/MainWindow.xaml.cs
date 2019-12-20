@@ -40,7 +40,12 @@ namespace ClientApplication
                     currentAccount.Added.Add(series.Id, new List<int>());
                 }
             }
-            Factory.Instance.accountRepository.UpdateAccount(currentAccount.Id);
+            if (Factory.Instance.accountRepository.CurrentAccount.Added != currentAccount.Added)
+            {
+                Factory.Instance.accountRepository.CurrentAccount = currentAccount;
+                Factory.Instance.accountRepository.UpdateAccount(currentAccount.Id);
+            }
+            
         }
         private void UpdateAll()
         {
