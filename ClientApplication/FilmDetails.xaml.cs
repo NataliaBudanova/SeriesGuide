@@ -23,18 +23,22 @@ namespace ClientApplication
         public FilmDetails(Film CurrentFilm)
         {
             InitializeComponent();
-            ActorsBox.ItemsSource = null;
-            ReviewsBox.ItemsSource = null;
+            UpdateAll();
             currentFilm = CurrentFilm;
             Name.Text = currentFilm.Name;
             TotalRate.Text = $"{currentFilm.GetTotalRating().ToString()}/10";
             Year.Text = currentFilm.ReleaseYear.ToString();
             Countries.Text = currentFilm.Countries;
             Directors.Text = currentFilm.Directors;
-            ActorsBox.ItemsSource = currentFilm.Actors;
             Description.Text = currentFilm.Description;
-            ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentFilm.Id];
 
+        }
+        private void UpdateAll()
+        {
+            ActorsBox.ItemsSource = null;
+            ReviewsBox.ItemsSource = null;
+            ActorsBox.ItemsSource = currentFilm.Actors;
+            ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentFilm.Id];
         }
 
         private void AddReview_Button_click(object sender, RoutedEventArgs e)
@@ -50,8 +54,7 @@ namespace ClientApplication
                     {
                         CurrentRate.Text = "";
                         CurrentCommnet.Text = "";
-                        ReviewsBox.ItemsSource = null;
-                        ReviewsBox.ItemsSource = Factory.Instance.filmRepository.Reviews[currentFilm.Id];
+                        UpdateAll();
                     }
                     else
                     {

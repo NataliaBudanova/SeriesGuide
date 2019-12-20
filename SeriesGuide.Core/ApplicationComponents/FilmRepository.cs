@@ -20,7 +20,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         {
             reviews = JsonConvertor.UpLoad<Dictionary<int, List<Review>>>(Path.Combine(FolderPath, ReviewsFileName));
             items = JsonConvertor.UpLoad<List<Film>>(Path.Combine(FolderPath, FilmFileName));
-            reсentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 20)).ToList();
+            reсentFilms = items.Where(f => ((DateTime.Now).Year - f.ReleaseYear <= 1)).ToList();
         }
 
         public void UpdateReviews(int seriesId, Review review)
