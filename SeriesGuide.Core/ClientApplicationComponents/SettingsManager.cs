@@ -19,7 +19,7 @@ namespace SeriesGuide.Core.ClientApplicationComponents
                 }
                 Factory.Instance.accountRepository.CurrentAccount.Login = login;
                 Factory.Instance.accountRepository.UpdateAccount(Factory.Instance.accountRepository.CurrentAccount.Id);
-                message = null;
+                message = "Login was successfully changed!";
                 return false;
             }
             else if (login == Factory.Instance.accountRepository.CurrentAccount.Login)
@@ -50,7 +50,7 @@ namespace SeriesGuide.Core.ClientApplicationComponents
                 }
                 Factory.Instance.accountRepository.CurrentAccount.Password = password;
                 Factory.Instance.accountRepository.UpdateAccount(Factory.Instance.accountRepository.CurrentAccount.Id);
-                message = null;
+                message = "Password was successfully changed!";
                 return false;
             }
             else

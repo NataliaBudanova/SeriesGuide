@@ -217,6 +217,11 @@ namespace ClientApplication
             {
                 MessageBox.Show(message);
             }
+            else
+            {
+                MessageBox.Show(message);
+            }
+            ChangeLoginTextBox.Text = null;
         }
         private void ChangePassword_Click(object sender, RoutedEventArgs e)
         {
@@ -225,6 +230,11 @@ namespace ClientApplication
             {
                 MessageBox.Show(message);
             }
+            else
+            {
+                MessageBox.Show(message);
+            }
+            ChangePassswordTextBox.Text = null;
         }
 
 

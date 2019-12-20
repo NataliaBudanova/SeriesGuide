@@ -48,6 +48,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         public void DeleteAccount()
         {
             items.Remove(items.First(a => a.Id == currentAccount.Id));
+            Factory.Instance.accountRepository.CurrentAccount = null;
             JsonConvertor.Save<AccountsData>(new AccountsData()
             {
                 Current = null,

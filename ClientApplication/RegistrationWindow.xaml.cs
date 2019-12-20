@@ -25,7 +25,11 @@ namespace ClientApplication
         {
             string message;
             if (RegisterManager.IsValid(Name.Text,PhoneNumber.Text,Password1.Password,Password2.Password, out message))
+            {
                 RegisterManager.RegistrateAccount(Name.Text, PhoneNumber.Text, Password1.Password);
+                new LoginWindow().Show();
+                this.Close();
+            }
             else
             {
                 MessageBox.Show(message);
