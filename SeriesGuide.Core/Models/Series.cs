@@ -25,9 +25,15 @@ namespace SeriesGuide.Core.Models
             Episodes = episodes;
             ReleaseYear = releaseYear;
             if (endYear == "")
+            {
                 EndYear = null;
+                IsEnded = false;
+            }
             else
+            {
                 EndYear = int.Parse(endYear);
+                IsEnded = true;
+            }   
             Id = Factory.Instance.seriesRepository.Items.Count();
 
         }
