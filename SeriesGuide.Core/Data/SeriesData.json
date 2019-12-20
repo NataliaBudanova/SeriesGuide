@@ -17,7 +17,7 @@
       "Ruben Santiago-Hudson - Captian Roy Mantgomery"
     ],
     "Description": "After a serial killer imitates the plots of his novels, successful mystery novelist Richard Castle receives permission from the Mayor of New York City to tag along with an NYPD homicide investigation team for research purposes.",
-    "SeriesId": 0,
+    "Id": 0,
     "EndYear": 2016,
     "IsEnded": true,
     "NumberOfSeasons": 8,
@@ -111,7 +111,7 @@
       "Alistair Petrie - Mr Groff"
     ],
     "Description": "Socially awkward teenager Otis Milburn is ambivalent about sex, despite, or perhaps because of, his mother being a sex therapist who is frank about all aspects of sexuality. After inadvertently assisting the school bully with his sexual performance anxiety, Otis sets up a sex advice business with Maeve—a confident but vulnerable classmate—to educate their fellow students in how to deal with their own sexual problems.",
-    "SeriesId": 1,
+    "Id": 1,
     "EndYear": null,
     "IsEnded": false,
     "NumberOfSeasons": 1,
