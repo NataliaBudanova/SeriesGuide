@@ -1,15 +1,1 @@
-{
-  "0": [],
-  "1": [
-    {
-      "Rating": 9,
-      "Comment": "Interesting movie. I enjoyed, reccomend it to everyone!",
-      "AccountId": 0,
-      "Login": "natusyakuu"
-    }
-  ],
-  "2": [],
-  "3": [],
-  "4": [],
-  "5": []
-}
+{"0":[],"1":[{"Rating":9,"Comment":"Interesting movie. I enjoyed, reccomend it to everyone!","AccountId":0,"Login":"natusyakuu"}],"2":[],"3":[{"Rating":8,"Comment":"Good enough!","AccountId":0,"Login":"natusyakuu"}],"4":[],"5":[]}
