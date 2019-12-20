@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SeriesGuide.Core\SeriesGuide.Core.csproj" />
     <ProjectReference Include="..\SeriesGuide.Core\SeriesGuide.Core.csproj" />
   </ItemGroup>
 
