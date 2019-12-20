@@ -42,6 +42,7 @@
                             <StackPanel Grid.Column="1">
                                 <Button Margin="5" Cursor="Hand" Height="18" HorizontalAlignment="Right" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedSearch_Button_click">Search</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDetails_Button_click">Show details</Button>
+                                <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedUpdate_Button_click">Update</Button>
                                 <Button Height="30" Margin="5" Cursor="Hand" BorderBrush="White" Background="Transparent" Foreground="White" Click="AddedDelete_Button_click">Delete</Button>
                             </StackPanel>
                             <TextBox Name ="AddedSearch"  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Width="130" Background="Transparent" BorderBrush="White" Foreground="White"></TextBox>

@@ -86,7 +86,7 @@ namespace ClientApplication
         {
             if (addedBox.SelectedItem != null)
             {
-                Factory.Instance.accountRepository.CurrentAccount.RemoveFromAddedSeries((Series)addedBox.SelectedItem);
+                Factory.Instance.accountRepository.CurrentAccount.RemoveFromAddedSeries(((Series)addedBox.SelectedItem).Id);
                 UpdateAll();
             }
         }
@@ -102,13 +102,14 @@ namespace ClientApplication
         {
             SeriesDetails seriesDetails = new SeriesDetails((Series)recentSeriesBox.SelectedItem);
             seriesDetails.Show();
+
         }
 
         private void NewSeriesAdd_Button_click(object sender, RoutedEventArgs e)
         {
             if (recentSeriesBox.SelectedItem != null)
             {
-                Factory.Instance.accountRepository.CurrentAccount.AddSeries((Series)recentSeriesBox.SelectedItem);
+                Factory.Instance.accountRepository.CurrentAccount.AddSeries(((Series)recentSeriesBox.SelectedItem).Id);
                 UpdateAll();
             }
         }
@@ -241,6 +242,9 @@ namespace ClientApplication
             this.Close();
         }
 
-        
+        private void AddedUpdate_Button_click(object sender, RoutedEventArgs e)
+        {
+            UpdateAll();
+        }
     }
 }
