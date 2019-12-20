@@ -13,6 +13,30 @@ namespace SeriesGuide.Core.Models
         public int NumberOfSeasons { get; set; }
 
         public List<Episode> Episodes;
+
+        public Series(string name, string genre, List<string> actors, string directors, string countries, string description, List<Episode> episodes, string endYear, int releaseYear)
+        {
+            Name = name;
+            Genre = genre;
+            Actors = actors;
+            Directors = directors;
+            Countries = countries;
+            Description = description;
+            Episodes = episodes;
+            ReleaseYear = releaseYear;
+            if (endYear == "")
+            {
+                EndYear = null;
+                IsEnded = false;
+            }
+            else
+            {
+                EndYear = int.Parse(endYear);
+                IsEnded = true;
+            }   
+            Id = Factory.Instance.seriesRepository.Items.Count();
+
+        }
         public bool AddReview(Review review)
         {
             if (IfReviewAvailable(review.AccountId))
