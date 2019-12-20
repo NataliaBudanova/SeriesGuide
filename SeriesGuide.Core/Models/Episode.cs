@@ -19,10 +19,17 @@ namespace SeriesGuide.Core.Models
             EpisodeNumber = episodeNumber;
             Name = name;
             Description = description;
-            if (Factory.Instance.seriesRepository.Items.Count() > 0)
-                EpisodeID = Factory.Instance.seriesRepository.Items.First(s => s.Id == Factory.Instance.seriesRepository.Items.Max(s => s.Id)).Episodes.Max(e => e.EpisodeID) + episodeNumber;
-            else
-                EpisodeID = episodeNumber - 1;
+            try
+            {
+                if (Factory.Instance.seriesRepository.Items.Count() > 0)
+                    EpisodeID = Factory.Instance.seriesRepository.Items.First(s => s.Id == Factory.Instance.seriesRepository.Items.Max(s => s.Id)).Episodes.Max(e => e.EpisodeID) + episodeNumber;
+                else
+                    EpisodeID = episodeNumber - 1;
+            }
+            catch
+            {
+            }
+            
         }
     }
 }

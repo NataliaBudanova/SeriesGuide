@@ -17,7 +17,14 @@ namespace SeriesGuide.Core.Models
             Countries = countries;
             Description = description;
             ReleaseYear = releaseYear;
-            Id = Factory.Instance.seriesRepository.Items.Count();
+            try
+            {
+                Id = Factory.Instance.seriesRepository.Items.Count();
+            }
+            catch
+            {
+            }
+
         }
         public bool AddReview(Review review)
         {

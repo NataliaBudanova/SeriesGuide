@@ -14,7 +14,7 @@ namespace SeriesGuide.Core.Models
 
         public List<Episode> Episodes;
 
-        public Series(string name, string genre, List<string> actors, string directors, string countries, string description, List<Episode> episodes, string endYear, int releaseYear)
+        public Series(string name, string genre, List<string> actors, string directors, string countries, string description, List<Episode> episodes, string endYear, int releaseYear, int nubmerOfSeasons)
         {
             Name = name;
             Genre = genre;
@@ -24,17 +24,25 @@ namespace SeriesGuide.Core.Models
             Description = description;
             Episodes = episodes;
             ReleaseYear = releaseYear;
-            if (endYear == "")
+            NumberOfSeasons = nubmerOfSeasons;
+            try
             {
-                EndYear = null;
-                IsEnded = false;
+                if (endYear == "")
+                {
+                    EndYear = null;
+                    IsEnded = false;
+                }
+                else
+                {
+                    EndYear = int.Parse(endYear);
+                    IsEnded = true;
+                }
+                Id = Factory.Instance.seriesRepository.Items.Count();
             }
-            else
+            catch
             {
-                EndYear = int.Parse(endYear);
-                IsEnded = true;
-            }   
-            Id = Factory.Instance.seriesRepository.Items.Count();
+            }
+
 
         }
         public bool AddReview(Review review)
