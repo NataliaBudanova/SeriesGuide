@@ -21,7 +21,7 @@ namespace ClientApplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Account currentAccount;
+        private Account currentAccount;
         public MainWindow()
         {
             InitializeComponent();
