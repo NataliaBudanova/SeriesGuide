@@ -39,6 +39,7 @@ namespace ClientApplication
             Countries.Text = currentSeries.Countries;
             Directors.Text = currentSeries.Directors;
             Seasons.Text = currentSeries.NumberOfSeasons.ToString();
+            Genres.Text = currentSeries.Genre;
             Description.Text = currentSeries.Description;
 
         }

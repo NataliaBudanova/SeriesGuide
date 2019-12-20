@@ -30,6 +30,7 @@ namespace ClientApplication
             Year.Text = currentFilm.ReleaseYear.ToString();
             Countries.Text = currentFilm.Countries;
             Directors.Text = currentFilm.Directors;
+            Genres.Text = currentFilm.Genre;
             Description.Text = currentFilm.Description;
 
         }
