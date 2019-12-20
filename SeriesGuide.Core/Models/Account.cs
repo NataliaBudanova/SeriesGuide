@@ -44,23 +44,24 @@ namespace SeriesGuide.Core.Models
             }
         }
 
-        public void AddSeries(Series series)
+        public void AddSeries(int seriesId)
         {
-            if (!AddedSeries.Contains(series.Id))
+            if (!AddedSeries.Contains(seriesId))
             {
-                AddedSeries.Add(series.Id);
+                AddedSeries.Add(seriesId);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
         }
 
-        public void RemoveFromAddedSeries(Series series)
+        public void RemoveFromAddedSeries(int seriesId)
         {
-            if (AddedSeries.Contains(series.Id))
+            if (AddedSeries.Contains(seriesId))
             {
-                AddedSeries.Remove(series.Id);
-                Added[series.Id] = new List<int>();
+                AddedSeries.Remove(seriesId);
+                Added[seriesId] = new List<int>();
                 Factory.Instance.accountRepository.UpdateAccount(Id);
             }
+
         }
 
         public void AddEpisode(int seriesId, Episode episode)
@@ -69,6 +70,10 @@ namespace SeriesGuide.Core.Models
             {
                 Added[seriesId].Add(episode.EpisodeID);
                 Factory.Instance.accountRepository.UpdateAccount(Id);
+            }
+            if (!AddedSeries.Contains(seriesId))
+            {
+                AddSeries(seriesId);
             }
         }     
 
