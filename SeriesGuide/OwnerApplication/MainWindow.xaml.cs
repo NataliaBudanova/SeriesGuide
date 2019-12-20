@@ -32,7 +32,7 @@ namespace OwnerApplication
 
         private void SeriesAddActor_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (SeriesActor.Text != null & SeriesRole.Text != null)
+            if (SeriesActor.Text.Length != 0 & SeriesRole.Text.Length != 0)
             {
                 seriesActors.Add(ApplicationOperator.AddActors(SeriesActor.Text, SeriesRole.Text));
                 SeriesActor.Text = "";
@@ -46,7 +46,7 @@ namespace OwnerApplication
 
         private void SeriesAddEpisode_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (EpisodeSeasonNumber.Text != null & EpisodeNumber.Text != null & EpisodeName.Text != null)
+            if (EpisodeSeasonNumber.Text.Length != 0 & EpisodeNumber.Text.Length != 0 & EpisodeName.Text.Length != 0)
             {
                 if (Int32.TryParse(EpisodeSeasonNumber.Text, out int seasonNumber) & Int32.TryParse(EpisodeNumber.Text, out int episodeNumber))
                 {
@@ -69,11 +69,11 @@ namespace OwnerApplication
 
         private void SeriesAdd_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (SeriesName.Text != null & SeriesReleaseYear.Text != null & SeriesGenre.Text != null & SeriesCountries.Text != null & SeriesNumberOfSeasons != null & SeriesDirectors.Text != null & seriesActors.Count() > 0 & episodes.Count() > 0) 
+            if (SeriesName.Text.Length != 0 & SeriesReleaseYear.Text.Length != 0 & SeriesGenre.Text.Length != 0 & SeriesCountries.Text.Length != 0 & SeriesNumberOfSeasons.Text.Length != 0 & SeriesDirectors.Text.Length != 0 & seriesActors.Count() > 0 & episodes.Count() > 0) 
             {
                 if ((Int32.TryParse(SeriesReleaseYear.Text, out int releaseYear)) & (Int32.TryParse(SeriesNumberOfSeasons.Text, out int numberOfSeasons)))
                 {
-                    if (ApplicationOperator.AddSeries(SeriesName.Text, SeriesGenre.Text, seriesActors, SeriesDirectors.Text, SeriesCountries.Text, SeriesDescription.Text, episodes, SeriesEndYear.Text, releaseYear))
+                    if (ApplicationOperator.AddSeries(SeriesName.Text, SeriesGenre.Text, seriesActors, SeriesDirectors.Text, SeriesCountries.Text, SeriesDescription.Text, episodes, SeriesEndYear.Text, releaseYear, numberOfSeasons))
                     {
                         ClearSeries();
                     }
@@ -87,6 +87,10 @@ namespace OwnerApplication
                     MessageBox.Show("Release year and number of seasons should be integer!");
                 }
             }
+            else
+            {
+                MessageBox.Show("Fields can't be null!");
+            }
         }
 
         private void SeriesClearAll_Button_Click(object sender, RoutedEventArgs e)
@@ -96,7 +100,7 @@ namespace OwnerApplication
 
         private void FilmAddActor_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (FilmActor.Text != null & FilmRole.Text != null)
+            if (FilmActor.Text.Length != 0 & FilmRole.Text.Length != 0)
             {
                 filmActors.Add(ApplicationOperator.AddActors(FilmActor.Text, FilmRole.Text));
                 FilmActor.Text = "";
@@ -110,7 +114,7 @@ namespace OwnerApplication
 
         private void FilmAdd_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (FilmName.Text != null & FilmReleaseYear.Text != null & FilmGenre.Text != null & FilmCountries.Text != null & FilmDirectors.Text != null & filmActors.Count() > 0)
+            if (FilmName.Text.Length != 0 & FilmReleaseYear.Text.Length != 0 & FilmGenre.Text.Length != 0 & FilmCountries.Text.Length != 0 & FilmDirectors.Text.Length != 0 & filmActors.Count() > 0)
             {
                 if (Int32.TryParse(FilmReleaseYear.Text, out int releaseYear))
                 {
