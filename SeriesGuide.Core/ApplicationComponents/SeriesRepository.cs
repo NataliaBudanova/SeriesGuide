@@ -21,7 +21,7 @@ namespace SeriesGuide.Core.ApplicationComponents
         {
             reviews = JsonConvertor.UpLoad<Dictionary<int, List<Review>>>(Path.Combine(FolderPath, ReviewsFileName));
             items = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, SeriesFileName));
-            recentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 20)).ToList();
+            recentSeries = items.Where(s => ((DateTime.Now).Year - s.ReleaseYear <= 1)).ToList();
         }
 
         public void UpdateReviews(int seriesId, Review review)

@@ -1,0 +1,113 @@
+﻿<Window x:Class="OwnerApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OwnerApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Background="Transparent" Height="700" Width="700">
+    <Border CornerRadius="25">
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="OrangeRed" Offset="0.0"></GradientStop>
+                <GradientStop Color="HotPink" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Border.Background>
+        <TabControl Background="Transparent" BorderBrush="Transparent" Margin="10">
+            <TabItem Header="Add series" Background="Transparent" BorderBrush="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White">Name:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="1">Release year:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="1" Grid.Column="2">End year:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="2">Genre:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="3">Directors:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="3" Grid.Column="2">Number of seasons:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="2" Grid.Column="2">Countries:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="4">Actor:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="4" Grid.Column="2">Role:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="5">Description:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="6">Episode:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Grid.Row="6" Grid.Column="1">Season №:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Grid.Row="6" Grid.Column="2">Episode №</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Grid.Row="6" Grid.Column="3">Name:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="7">Description:</TextBlock>
+                    <TextBox Name="SeriesName" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Column="1" Grid.ColumnSpan="4" Width="550"></TextBox>
+                    <TextBox Name="SeriesReleaseYear" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="1" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="SeriesEndYear" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="1" Grid.Column="3" Width="170"></TextBox>
+                    <TextBox Name="SeriesGenre" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="2" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="SeriesDirectors"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="3" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="SeriesNumberOfSeasons"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="3" Grid.Column="3" Width="170"></TextBox>
+                    <TextBox Name="SeriesCountries" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="2" Grid.Column="3" Width="170"></TextBox>
+                    <TextBox Name="SeriesActor"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="4" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="SeriesRole" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="4" Grid.Column="3" Width="170"></TextBox>
+                    <TextBox Name="SeriesDescription" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Width="550"></TextBox>
+                    <TextBox Name="EpisodeSeasonNumber" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="6" Grid.Column="1" Width="25"></TextBox>
+                    <TextBox Name="EpisodeNumber" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="6" Grid.Column="2" Width="25"></TextBox>
+                    <TextBox Name="EpisodeName" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2" Width="170"></TextBox>
+                    <TextBox Name="EpisodeDescription" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Width="470"></TextBox>
+                    <Button Click="SeriesAddActor_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="4" Grid.Column="4">Add</Button>
+                    <Button Click="SeriesAddEpisode_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="7" Grid.Column="4">Add</Button>
+                    <Button Click="SeriesAdd_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="8" Grid.Column="1">Add this series</Button>
+                    <Button Click="SeriesClearAll_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="8" Grid.Column="3">Clear all</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Add film" Background="Transparent" BorderBrush="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White">Name:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="1">Release year:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="2">Genre:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="3">Directors:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="2" Grid.Column="2">Countries:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="4">Actor:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="4" Grid.Column="2">Role:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Foreground="White" Grid.Row="5">Description:</TextBlock>
+                    <TextBox Name="FilmName" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Column="1" Grid.ColumnSpan="4" Width="550"></TextBox>
+                    <TextBox Name="FilmReleaseYear" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="1" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="FilmGenre" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="2" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="FilmDirectors"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Width="550"></TextBox>
+                    <TextBox Name="FilmCountries" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="2" Grid.Column="3" Width="170"></TextBox>
+                    <TextBox Name="FilmActor"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="4" Grid.Column="1" Width="170"></TextBox>
+                    <TextBox Name="FilmRole" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="4" Grid.Column="3" Width="170"></TextBox>
+                    <TextBox Name="FilmDescription" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Width="550"></TextBox>
+                    <Button Click="FilmAddActor_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="4" Grid.Column="4">Add</Button>
+                    <Button Click="FilmAdd_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="6" Grid.Column="1">Add this film</Button>
+                    <Button Click="FilmClearAll_Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Foreground="White" Background="Transparent" BorderBrush="White" Grid.Row="6" Grid.Column="3">Clear all</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Border>
+</Window>
