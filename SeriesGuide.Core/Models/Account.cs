@@ -1,6 +1,7 @@
 ﻿using SeriesGuide.Core.ApplicationComponents;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -32,7 +33,7 @@ namespace SeriesGuide.Core.Models
 
         private void FullfillAdded()
         {
-            List<Series> _series = Factory.Instance.seriesRepository.Items.ToList();
+            List<Series> _series = JsonConvertor.UpLoad<List<Series>>(Path.Combine(FolderPath, SeriesFileName));
             foreach (Series series in _series)
             {
                 Added = new Dictionary<int, List<int>>();
@@ -116,5 +117,7 @@ namespace SeriesGuide.Core.Models
             }
             
         }
+        private const string SeriesFileName = "SeriesData.json";
+        private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }

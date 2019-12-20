@@ -30,8 +30,9 @@ namespace SeriesGuide.Core.ApplicationComponents
             JsonConvertor.Save<Dictionary<int, List<Review>>>(reviews, Path.Combine(FolderPath, ReviewsFileName));
         }
 
-        private const string SeriesFileName = "SeriesData.json";
+        
         private const string ReviewsFileName = "SeriesReviews.json";
+        private const string SeriesFileName = "SeriesData.json";
         private const string FolderPath = "../../../../SeriesGuide.Core/Data";
     }
 }
