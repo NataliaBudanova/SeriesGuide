@@ -39,11 +39,6 @@ namespace ClientApplication
             data = Factory.Instance.accountRepository.Items;
         }
 
-        private void WithoutAccount_button_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Registration_button_click(object sender, RoutedEventArgs e)
         {
             RegistrationWindow registrationWindow = new RegistrationWindow();
